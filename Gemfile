@@ -8,8 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use pg as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -31,7 +31,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bcrypt', '3.1.11'
+#Use Bootstap
+ gem 'bootstrap-sass', '3.3.6'
+ gem 'awesome_print', require:"ap"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,13 +43,23 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+group :test do
+  gem 'rails-controller-testing', '0.1.1'
+    gem 'minitest-reporters', '1.1.9'
+    gem 'guard', '2.13.0'
+    gem 'guard-minitest', '2.4.4'
+end
+
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem "better_errors"
+  gem 'web-console'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'meta_request'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
