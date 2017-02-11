@@ -5,10 +5,10 @@ class Listing < ApplicationRecord
 		# else
 		# 	all
 		# end
-		if search 
-			where(["city LIKE ?","%#{search}%"])
+		if search.present?
+			where("city @@ :q or name @@ :q", q: search)
 		else
-			all
+			where(nil)
 		end
 	end
 end
