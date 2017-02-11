@@ -1,6 +1,119 @@
-<center>
-	<%= form_tag listings_path, :method => 'get' do %>
- <%= text_field_tag :search, params[:search] %>
- <%= submit_tag "Search" %>
- <% end %>
-</center>
+
+
+ <header class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <span class="subheading">Find a place to work from on</span>
+                        <h1>Dijispace</h1>
+                        <div id="top-search-input">
+                            <div class="input-group col-md-12">
+                                <!-- <input type="text" class="form-control input-lg" placeholder="search by country, city or location" /> -->
+                               <%= form_tag listings_path, :method => 'get' , class: 'input-group' do %>
+                                <%= text_field_tag :search, params[:search] , placeholder: "search by  country,city or location", class: 'form-control input-lg' %>
+                                 
+                                <span class="input-group-btn">
+                                    
+                                    <%= submit_tag "Search", class: 'btn btn-info btn-lg'  %>
+                                </span>
+                                
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="featured-listings col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="featured-listing row">
+                    <div class="front-space col-md-4 background_image" >
+
+                      <h3>Name of hub</h3>
+                      <p>City, Location</p>
+
+                    </div>
+                    <div class="front-space col-md-4 background_image" >
+                      <h3>Name of hub</h3>
+                      <p>City, Location</p>
+                    </div>
+                    <div class="front-space col-md-4 background_image">
+                      <h3>Name of hub</h3>
+                      <p>City, Location</p>
+                    </div>
+                </div>
+                <div class="featured-listing row">
+                    <div class="front-space col-md-4 background_image">
+                      <h3>Name of hub</h3>
+                      <p>City, Location</p>
+                    </div>
+                    <div class="front-space col-md-4 background_image">
+                      <h3>Name of hub</h3>
+                      <p>City, Location</p>
+                    </div>
+                    <div class="front-space col-md-4 background_image">
+                      <h3>Name of hub</h3>
+                      <p>City, Location</p>
+                    </div>
+                </div>
+            </div>
+            <div class="call-to-action">
+                <a href="#">
+                    <h2 class="action-title">
+                        Let's make working easier for you
+                    </h2>
+                    </a>
+                    <center>
+                    	
+                    	<h3 >
+                <%= link_to "Sign Up" , signup_path , class: "action-subtitle" %>
+                    </h3>
+                    </center>     
+            </div>
+        </div>
+    </div>
+<hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                            
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>

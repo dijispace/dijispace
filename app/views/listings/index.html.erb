@@ -3,7 +3,7 @@
 
  <ul>
 	<% @listings.each do |listing| %>
-	<li> <%= listing.name  %>  ,  <%= listing.city  %>  , <%= listing.country  %>  ,    <%= listing.seats %> seats available  , $<%= listing.price  %>    <%=link_to 'Book' , listings_path %> </li>
+	<li> <%= listing.name  %>  ,  <%= listing.city  %>  , <%= listing.country  %>  ,    <%= listing.seats %> seats available  , $<%= listing.price  %>    <%=link_to 'Book' , signup_path %> </li>
 
 
 	<% end %>

@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 #Use Bootstap
  gem 'bootstrap-sass', '3.3.6'
+ gem 'font-awesome-sass', '~> 4.6.2'
+ #gem "font-awesome-rails", "~> 4.3"
  gem 'awesome_print', require:"ap"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
