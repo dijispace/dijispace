@@ -8,6 +8,6 @@
 
 Listing.delete_all
 
-Listing.create!(name:'Workshed',country:'Ghana' ,city:'Baatsona,Accra',seats:'5' ,price: '40' )
-Listing.create!(name:'Ispace',country:'Ghana' ,city:'Accra',seats:'6' ,price: '30' )
-Listing.create!(name:'Ihub',country:'Ghana' ,city:'Labone',seats:'7' ,price: '10' )
+Listing.create!(name:'Workshed',country:'Ghana' ,city:'Baatsona',seats:'5' ,price: '40' )
+Listing.create!(name:'Ispace Hub',country:'Ghana' ,city:'Labone',seats:'6' ,price: '30' )
+Listing.create!(name:'Impact Hub',country:'Ghana' ,city:'Osu',seats:'7' ,price: '10' )

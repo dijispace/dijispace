@@ -1,12 +1,9 @@
 <!-- <h1>Listings#index</h1> -->
- <%= form_tag listings_path, :method => 'get' do %>
- <%= text_field_tag :search, params[:search] %>
- <%= submit_tag "Search" %>
- <% end %>
+ 
   
  <ul>
 	<% @listings.each do |listing| %>
-	<li> <%= listing.name  %>  <%=link_to 'Book' , listings_path %> </li>
+	<li> <%= listing.name  %>  ,  <%= listing.city  %>  , <%= listing.country  %>  ,    <%= listing.seats %> seats available  , $<%= listing.price  %>    <%=link_to 'Book' , listings_path %> </li>
 
 	<% end %>
 </ul>
