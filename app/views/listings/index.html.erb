@@ -1,6 +1,6 @@
 
  
-<center>  
+
  <ul>
 	<% @listings.each do |listing| %>
 	<li> <%= listing.name  %>  ,  <%= listing.city  %>  , <%= listing.country  %>  ,    <%= listing.seats %> seats available  , $<%= listing.price  %>    <%=link_to 'Book' , listings_path %> </li>
@@ -9,4 +9,4 @@
 	<% end %>
 </ul>
 
- </center>
+ 
