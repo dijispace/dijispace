@@ -228,42 +228,19 @@ hr.small {
     border-left: solid 1px #ccc;
 }
 
-.featured-listings {
+.featured-listing {
   margin-bottom: 50px;
 }
-
 .featured-listing p{
   font-size: 14px;
   margin: 5px 0;
 }
 
 .featured-listing h3{
-  margin: 150px 0 2px;
+  margin: 10px 0 2px;
   font-size: 16px;
   font-weight: normal;
 }
-
-.front-space {
-  /*box-shadow: 0px 0px 10px 2px rgba(119, 119, 119, 0.75);
-  -moz-box-shadow: 0px 0px 10px 2px rgba(119, 119, 119, 0.75);
-  -webkit-box-shadow: 0px 0px 10px 2px rgba(119, 119, 119, 0.75);*/
-
-  margin: 5px 5px;
-}
-
-.front-space.col-md-4 {
-  width: 31%;
-}
-
-.front-space:first-child{
-  margin-left: 0;
-}
-
-.front-space:last-child{
-  margin-right: 0;
-}
-
-
 
 .intro-header .action-heading h1 {
   font-size: 35px;
