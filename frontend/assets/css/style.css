@@ -13,7 +13,7 @@ body {
 }
 p {
   line-height: 1.5;
-  margin: 30px 0;
+  margin: 10px 0;
 }
 p a {
   text-decoration: underline;
@@ -59,6 +59,7 @@ hr.small {
   width: 100%;
   z-index: 3;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fff;
 }
 .navbar-custom .navbar-brand {
   font-weight: 300;
@@ -77,7 +78,7 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    background: transparent;
+    background: #fff;
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
@@ -145,6 +146,10 @@ hr.small {
   }
 }
 
+.pages {
+  border-bottom: thin solid #f3f3f3;
+}
+
 /* Mask for background, by default is not display */
 #mask {
     display: none;
@@ -184,9 +189,9 @@ hr.small {
 }
 
 img.btn_close {
-    Position the close button
+    /*Position the close button*/
 	float: right;
-    margin: -28px -28px 0 0;
+  margin: -28px -28px 0 0;
 }
 
 fieldset {
@@ -252,6 +257,11 @@ form.signin input::-webkit-input-placeholder {
     background: #ddd;
 }
 
+.section-title {
+  text-align: center;
+  font-weight: normal;
+}
+
 .intro-header {
   background-color: #777777;
   background: no-repeat center center;
@@ -305,11 +315,18 @@ form.signin input::-webkit-input-placeholder {
   }
 }
 
+.listings {
+  margin-top: 100px;
+}
+
 #top-search-input{
-    border: solid 1px #E4E4E4;
+    border: solid 0 #E4E4E4;
     border-radius: 0;
     background-color: #fff;
     margin-top: 50px;
+    box-shadow: 0px 1px 4px 0px rgba(119, 119, 119, 0.5);
+    -moz-box-shadow: 0px 1px 4px 0px rgba(119, 119, 119, 0.5);
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(119, 119, 119, 0.5);
 }
 
 #top-search-input input{

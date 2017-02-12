@@ -73,7 +73,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top pages">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -103,108 +103,32 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Sign Up Form -->
-    <div id="login-box" class="login-popup">
-    <a href="#" class="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>
-      <form method="post" class="signin" action="#">
-            <fieldset class="textbox">
-            <label class="username">
-            <span>Username or email</span>
-            <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="">
-            </label>
-            <label class="password">
-            <span>Password</span>
-            <input id="password" name="password" value="" type="password" placeholder="">
-            </label>
-            <button class="submit btn btn-info" type="button">Register</button>
-            <p>
-            <a class="forgot" href="#">Forgot your password?</a>
-            </p>
-            </fieldset>
-      </form>
-    </div>
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="site-heading">
-                        <span class="subheading">Find a place to work from on</span>
-                        <h1>Dijispace</h1>
-                        <div id="top-search-input">
-                            <div class="input-group col-md-12">
-                                <input type="text" class="form-control input-lg" placeholder="search by country, city or location" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info btn-lg" type="button">
-                                        Search
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+   <div class="container listings">
+    <div class="row single-listing">
+        <div class="col-md-4">
+            <img class="img-responsive" src="assets/img/post-sample-image.jpg" alt="">
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="featured-listings col-lg-10 col-lg-offset-1 col-md-12">
-                <h3 class="section-title">Featured Listings</h3>
-                <div class="featured-listing row">
-                    <div class="front-space col-md-4">
-                      <img class="img-responsive" src="assets/img/post-sample-image.jpg"/>
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
-                    </div>
-                    <div class="front-space col-md-4">
-                      <img class="img-responsive" src="assets/img/post-sample-image.jpg"/>
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
-                    </div>
-                    <div class="front-space col-md-4">
-                      <img class="img-responsive" src="assets/img/post-sample-image.jpg"/>
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
-                    </div>
-                </div>
-                <div class="featured-listing row">
-                    <div class="front-space col-md-4">
-                      <img class="img-responsive" src="assets/img/post-sample-image.jpg"/>
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
-                    </div>
-                    <div class="front-space col-md-4">
-                      <img class="img-responsive" src="assets/img/post-sample-image.jpg"/>
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
-                    </div>
-                    <div class="front-space col-md-4">
-                      <img class="img-responsive" src="assets/img/post-sample-image.jpg"/>
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-              <div class="call-to-action">
-                <a href="#">
-                <h2 class="action-title">
-                    Let's make working easier for you
-                </h2>
-                <h3 class="action-subtitle">
-                    Sign Up
-                </h3>
-              </div>
-            </div>
-          </a>
+        <div class="col-md-8">
+            <h3>Name of Space</h3>
+            <p>Location</p>
+            <p>Summary</p>
+            <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet felis eu lorem lacinia ullamcorper vitae in nisl. Sed at nulla at nisi tincidunt scelerisque nec vitae metus. Quisque ligula est, convallis fermentum blandit a, elementum ac augue. Sed ut interdum dui, vitae scelerisque metus....</article>
+        </div>
+    </div>
+    <hr>
+    <div class="row single-listing">
+        <div class="col-md-4">
+            <img class="img-responsive" src="assets/img/post-sample-image.jpg" alt="">
+        </div>
+        <div class="col-md-8">
+            <h3>Name of Space</h3>
+            <p>Location</p>
+            <p>Summary</p>
+            <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet felis eu lorem lacinia ullamcorper vitae in nisl. Sed at nulla at nisi tincidunt scelerisque nec vitae metus. Quisque ligula est, convallis fermentum blandit a, elementum ac augue. Sed ut interdum dui, vitae scelerisque metus...</article>
         </div>
     </div>
 
+   </div>
     <hr>
 
     <!-- Footer -->
@@ -236,16 +160,20 @@
         </div>
     </footer>
 
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="assets/js/jqBootstrapValidation.js"></script>
-    <script src="assets/js/contact_me.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="assets/js/clean-blog.min.js"></script>
+    <script src="js/clean-blog.min.js"></script>
 
 </body>
 
 </html>
+
