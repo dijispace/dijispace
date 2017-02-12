@@ -146,10 +146,6 @@ hr.small {
   }
 }
 
-.pages {
-  border-bottom: thin solid #f3f3f3;
-}
-
 /* Mask for background, by default is not display */
 #mask {
     display: none;
@@ -304,6 +300,19 @@ form.signin input::-webkit-input-placeholder {
   margin: 10px 0 0;
 }
 
+.pages {
+  border-bottom: thin solid #f3f3f3;
+}
+
+.intro-header.single-listing span {
+  color: #fff;
+}
+
+.intro-header.single-listing .page-heading h1 {
+  margin-top: 100px;
+  color: #fff;
+}
+
 .site-heading h1 {
   color: #3385A1;
 }
@@ -428,6 +437,15 @@ form.signin input::-webkit-input-placeholder {
     font-size: 36px;
   }
 }
+
+.pages {
+  border-bottom: thin solid #f3f3f3;
+}
+
+.book {
+  width: 100%;
+}
+
 .section-heading {
   font-size: 36px;
   margin-top: 60px;
