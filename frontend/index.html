@@ -15,7 +15,7 @@
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="assets/css/clean-blog.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -28,6 +28,45 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $('a.login-window').click(function() {
+
+          //Getting the variable's value from a link
+          var loginBox = $(this).attr('href');
+
+          //Fade in the Popup
+          $(loginBox).fadeIn(300);
+
+          //Set the center alignment padding + border see css style
+          var popMargTop = ($(loginBox).height() + 24) / 2;
+          var popMargLeft = ($(loginBox).width() + 24) / 2;
+
+          $(loginBox).css({
+              'margin-top' : -popMargTop,
+              'margin-left' : -popMargLeft
+          });
+
+          // Add the mask to body
+          $('body').append('<div id="mask"></div>');
+          $('#mask').fadeIn(300);
+
+          return false;
+      });
+
+      // When clicking on the button close or the mask layer the popup closed
+      $('a.close, #mask').live('click', function() {
+        $('#mask , .login-popup').fadeOut(300 , function() {
+          $('#mask').remove();
+      });
+      return false;
+      });
+    });
+  </script>
 
 </head>
 
@@ -55,7 +94,7 @@
                         <a href="#">Log In</a>
                     </li>
                     <li>
-                        <a href="#">Sign Up</a>
+                        <a href="#login-box" class="login-window">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -63,6 +102,27 @@
         </div>
         <!-- /.container -->
     </nav>
+
+    <!-- Sign Up Form -->
+    <div id="login-box" class="login-popup">
+    <a href="#" class="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+      <form method="post" class="signin" action="#">
+            <fieldset class="textbox">
+            <label class="username">
+            <span>Username or email</span>
+            <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="">
+            </label>
+            <label class="password">
+            <span>Password</span>
+            <input id="password" name="password" value="" type="password" placeholder="">
+            </label>
+            <button class="submit btn btn-info" type="button">Register</button>
+            <p>
+            <a class="forgot" href="#">Forgot your password?</a>
+            </p>
+            </fieldset>
+      </form>
+    </div>
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
@@ -150,41 +210,30 @@
     <footer>
         <div class="container">
             <div class="row">
+              <div class="col-md-4">
+                <ul>
+                  <li>About Us</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Terms of Use</li>
+                  <li>Privacy Policy</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Facebook</li>
+                  <li>Twitter</li>
+                </ul>
+              </div>
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                    <p class="copyright text-muted">&copy; 2017. Dijispace Ltd.</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
