@@ -31,42 +31,16 @@
 
     <!-- jQuery -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="assets/js/jquery.leanModal.min.js"></script>
 
     <script type="text/javascript">
-      $(document).ready(function() {
-      $('a.login-window').click(function() {
+        $(function() {
+            $('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });		
+        });	
+    </script>
 
-          //Getting the variable's value from a link
-          var loginBox = $(this).attr('href');
 
-          //Fade in the Popup
-          $(loginBox).fadeIn(300);
-
-          //Set the center alignment padding + border see css style
-          var popMargTop = ($(loginBox).height() + 24) / 2;
-          var popMargLeft = ($(loginBox).width() + 24) / 2;
-
-          $(loginBox).css({
-              'margin-top' : -popMargTop,
-              'margin-left' : -popMargLeft
-          });
-
-          // Add the mask to body
-          $('body').append('<div id="mask"></div>');
-          $('#mask').fadeIn(300);
-
-          return false;
-      });
-
-      // When clicking on the button close or the mask layer the popup closed
-      $('a.close, #mask').live('click', function() {
-        $('#mask , .login-popup').fadeOut(300 , function() {
-          $('#mask').remove();
-      });
-      return false;
-      });
-    });
-  </script>
 
 </head>
 
@@ -91,10 +65,10 @@
                         <a href="#">Register Your Space</a>
                     </li>
                     <li>
-                        <a href="#">Log In</a>
+                        <a href="#login-box" class="login-window">Log In</a>
                     </li>
                     <li>
-                        <a href="#login-box" class="login-window">Sign Up</a>
+                        <a id="go" rel="leanModal" name="signup" href="#signup">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -104,24 +78,32 @@
     </nav>
 
     <!-- Sign Up Form -->
-    <div id="login-box" class="login-popup">
-    <a href="#" class="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>
-      <form method="post" class="signin" action="#">
-            <fieldset class="textbox">
-            <label class="username">
-            <span>Username or email</span>
-            <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="">
-            </label>
-            <label class="password">
-            <span>Password</span>
-            <input id="password" name="password" value="" type="password" placeholder="">
-            </label>
-            <button class="submit btn btn-info" type="button">Register</button>
-            <p>
-            <a class="forgot" href="#">Forgot your password?</a>
-            </p>
-            </fieldset>
-      </form>
+    <div id="signup">
+        <div id="signup-ct">
+            <div id="signup-header">
+                <h2>Create a new account</h2>
+                <p>It's simple, and free.</p>
+                <a class="modal_close" href="#"></a>
+            </div>
+            
+            <form action="" _lpchecked="1">
+                <div class="txt-fld">
+                    <label for="">Username</label>
+                    <input id="" class="good_input" name="" type="text">
+                </div>
+                <div class="txt-fld">
+                    <label for="">Email address</label>
+                    <input id="" name="" type="text">
+                </div>
+                    <div class="txt-fld">
+                    <label for="">Password</label>
+                    <input id="" name="" type="text">
+                </div>
+                    <div class="btn-fld">
+                    <button class="btn btn-info" type="submit">Sign Up »</button>
+                </div>
+             </form>
+        </div>
     </div>
 
     <!-- Page Header -->
