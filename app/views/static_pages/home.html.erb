@@ -10,7 +10,7 @@
                         <div id="top-search-input">
                             <div class="input-group col-md-12">
                                 <!-- <input type="text" class="form-control input-lg" placeholder="search by country, city or location" /> -->
-                               <%= form_tag listings_path, :method => 'get' , class: 'input-group' do %>
+                               <%= form_tag search_path, :method => 'get' , class: 'input-group' do %>
                                 <%= text_field_tag :search, params[:search] , placeholder: "search by  country,city or location", class: 'form-control input-lg' %>
                                  
                                 <span class="input-group-btn">
@@ -28,55 +28,58 @@
     </header>
 
      <!-- Main Content -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="featured-listings col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="featured-listings col-lg-10 col-lg-offset-1 col-md-12">
                 <div class="featured-listing row">
-                    <div class="front-space col-md-4 background_image" >
+                   <div class="front-space col-md-4 background_image" >
 
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
+                     <!--  <h3>Name of hub</h3>
+                      <p>City, Location</p> -->
 
                     </div>
                     <div class="front-space col-md-4 background_image" >
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
+                      <!-- <h3>Name of hub</h3>
+                      <p>City, Location</p> -->
                     </div>
                     <div class="front-space col-md-4 background_image">
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
+                      <!-- <h3>Name of hub</h3>
+                      <p>City, Location</p> -->
                     </div>
                 </div>
                 <div class="featured-listing row">
-                    <div class="front-space col-md-4 background_image">
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
+                    <div class="front-space col-md-4 background_image" >
+
+                      <!-- <h3>Name of hub</h3>
+                      <p>City, Location</p> -->
+
+                    </div>
+                    <div class="front-space col-md-4 background_image" >
+                     <!--  <h3>Name of hub</h3>
+                      <p>City, Location</p> -->
                     </div>
                     <div class="front-space col-md-4 background_image">
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
-                    </div>
-                    <div class="front-space col-md-4 background_image">
-                      <h3>Name of hub</h3>
-                      <p>City, Location</p>
+                      <!-- <h3>Name of hub</h3>
+                      <p>City, Location</p> -->
                     </div>
                 </div>
             </div>
-            <div class="call-to-action">
+
+            <!-- <div class="container">
+              <div class="call-to-action">
                 <a href="#">
-                    <h2 class="action-title">
-                        Let's make working easier for you
-                    </h2>
-                    </a>
-                    <center>
-                    	
-                    	<h3 >
-                <%= link_to "Sign Up" , signup_path , class: "action-subtitle" %>
-                    </h3>
-                    </center>     
-            </div>
+                <h2 class="action-title">
+                    Let's make working easier for you
+                </h2>
+                <h3 class="action-subtitle">
+                    Sign Up
+                </h3>
+              </div>
+            </div> -->
+          </a>
         </div>
     </div>
+
 <hr>
 
     <!-- Footer -->

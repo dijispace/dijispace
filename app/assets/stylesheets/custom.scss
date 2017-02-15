@@ -4,6 +4,7 @@
 @import "bootstrap";
 
 
+
 .container-fluid {
      padding-right: 50px;
      padding-left: 50px;
@@ -11,13 +12,21 @@
 
 body {
   font-family: 'Lora', 'Times New Roman', serif;
-  font-size: 20px;
+  font-size: 20px;    
   color: #333333;
 
 }
 
 .background_image {
-  background-image: image-url('post-sample-image.jpg');
+  background-image: image-url('meeting-modern-room-conference-159805.jpg');
+  height: 250px;
+  width: 400px
+}
+
+
+
+.background_banner {
+  background-image: image-url('pexels-photo.jpg');
 }
 
 p {
@@ -57,9 +66,12 @@ hr.small {
   border-width: 4px;
   border-color: white;
 }
-.navbar-brand>img {
-    height: 30px;
+
+.book {
+  width: 100%;
 }
+
+
 
 .navbar-custom {
   position: absolute;
@@ -450,4 +462,23 @@ img::-moz-selection {
 }
 body {
   -webkit-tap-highlight-color: #0085A1;
+}
+
+.intro-header.single-listing span {
+  color: #fff;
+}
+
+.intro-header.single-listing .page-heading h1 {
+  margin-top: 100px;
+  color: #fff;
+}
+
+
+
+.list-group li {
+    list-style: none;
+}
+.panel-info, .panel-rating, .panel-more1 {
+    float: left;
+    margin: 0 10px;
 }

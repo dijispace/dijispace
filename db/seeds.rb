@@ -6,8 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Listing.delete_all
+Space.delete_all
 
-Listing.create!(name:'Workshed',country:'Ghana' ,city:'Baatsona',seats:'5' ,price: '40' )
-Listing.create!(name:'Ispace Hub',country:'Ghana' ,city:'Labone',seats:'6' ,price: '30' )
-Listing.create!(name:'Impact Hub',country:'Ghana' ,city:'Osu',seats:'7' ,price: '10' )
+Space.create!(name:'Workshed',country:'Ghana' ,location:'Baatsona',seats:'5' ,price: '40' )
+Space.create!(name:'Ispace Hub',country:'Ghana' ,location:'Labone',seats:'6' ,price: '30' )
+Space.create!(name:'Impact Hub',country:'Ghana' ,city:'Osu',seats:'7' ,price: '10' )
+Space.create!(name:'Airspace Hub',country:'Ghana' ,city:'Takoradi',seats:'9' ,price: '15' )
+Space.create!(name:'CC Hub',country:'Nigeria' ,city:'Lagos',seats:'9' ,price: '15' )
+Space.create!(name:'Creation Hub',country:'Nigeria' ,city:'Abuja',seats:'9' ,price: '15' )
+Space.create!(name:'Creation Hub',country:'Ghana' ,city:'Baatsona',seats:'9' ,price: '15' )
+Space.create!(name:'Penplusbytes',country:'Ghana' ,city:'Baatsona',seats:'9' ,price: '15' )
