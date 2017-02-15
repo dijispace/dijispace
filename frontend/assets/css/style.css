@@ -76,12 +76,13 @@ hr.small {
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 @media only screen and (min-width: 768px) {
-  .navbar-custom {
-    background: #fff;
+  .navbar-custom, .home.navbar-custom {
+    background-color: #fff;
     border-bottom: 1px solid transparent;
   }
-  .navbar-custom .navbar-brand {
+  .navbar-custom .navbar-brand, .home.navbar-custom {
     color: #000;
     padding: 20px;
   }
@@ -143,6 +144,15 @@ hr.small {
     -ms-transform: translate3d(0, 100%, 0);
     -o-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .home.navbar-custom {
+    background-color: transparent;
+  }
+  .home .nav li a {
+    color: #fff;
   }
 }
 
@@ -238,6 +248,12 @@ form .txt-fld input::-webkit-input-placeholder {
   font-weight: normal;
 }
 
+header.intro-header {
+    background-image: url(../../assets/img/post-bg.jpg);
+    background-color: aliceblue;
+    color: #000;
+}
+
 .intro-header {
   background-color: #777777;
   background: no-repeat center center;
@@ -258,7 +274,7 @@ form .txt-fld input::-webkit-input-placeholder {
   .intro-header .site-heading,
   .intro-header .action-heading,
   .intro-header .page-heading {
-    padding: 120px 0 20px;
+    padding: 120px 0 120px;
   }
 }
 .intro-header .site-heading,
@@ -273,6 +289,7 @@ form .txt-fld input::-webkit-input-placeholder {
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
   font-size: 24px;
+  color: #fff;
   line-height: 1.1;
   display: block;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -526,6 +543,12 @@ form .row:first-child .floating-label-form-group {
 footer ul{
   list-style: none;
 }
+
+@media only screen and (max-width: 991px) {
+  footer {
+    text-align: center;
+  }
+
 
 ::-moz-selection {
   color: white;
