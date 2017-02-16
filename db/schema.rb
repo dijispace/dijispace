@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215164610) do
+ActiveRecord::Schema.define(version: 20170216095655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,6 @@ ActiveRecord::Schema.define(version: 20170215164610) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "picture"
-    t.integer  "host_id"
-    t.string   "country"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +52,19 @@ ActiveRecord::Schema.define(version: 20170215164610) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "workspaces", force: :cascade do |t|
+    t.integer  "host_id"
+    t.text     "name"
+    t.text     "location"
+    t.text     "country"
+    t.text     "description"
+    t.integer  "price"
+    t.integer  "seats"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "picture"
+    t.index ["host_id"], name: "index_workspaces_on_host_id", using: :btree
+  end
+
+  add_foreign_key "workspaces", "hosts"
 end

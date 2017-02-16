@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  #get 'workspaces/index'
+
+  #get 'workspaces/new'
+
+  #get 'workspaces/show'
+
   #get 'spaces/new'
 
   #get 'host_session/new'
@@ -42,9 +48,9 @@ Rails.application.routes.draw do
   post '/loginhost', to: 'host_session#create'
   delete '/logouthost', to: 'host_session#destroy'
   
-  get 'list' , to: 'spaces#new'
-  post 'list', to: 'spaces#create'
-  get 'search', to: 'spaces#index'
+  get 'list' , to: 'workspaces#new'
+  post 'list', to: 'workspaces#create'
+  get 'search', to: 'workspaces#index'
   
 
   #root 'listings#index'
@@ -53,7 +59,7 @@ Rails.application.routes.draw do
   resources  :users
   resources  :single_listing 
   resources  :hosts
-  resources  :spaces 
+  resources  :workspaces
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

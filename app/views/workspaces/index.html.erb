@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+ 
+
+
+<% link_to @workspace do %> 
+<% @workspace.each do |workspaces| %>
+
+<div class="container" >
+   
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                  <%= image_tag workspaces.picture.url if workspaces.picture %>   
+                </div>
+                <div class="panel-more1">
+                   
+                  <p><%= workspaces.name  %> </p> 
+                  <p><%= workspaces.location %></p>
+                  
+                  <p> $<%= workspaces.price %> </p>
+                  </div>
+                  
+            </div>
+            </div>
+            </div>
+
+            <% end %>
+           <% end %>

@@ -1,6 +1,6 @@
 class Host < ApplicationRecord
 
-	has_many :spaces
+	has_many :workspaces
 
 	validates :name, presence: true, length: { maximum: 50}
     
