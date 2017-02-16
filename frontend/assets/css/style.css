@@ -7,7 +7,7 @@
  }
 
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
   color: #333333;
 }
@@ -18,13 +18,8 @@ p {
 p a {
   text-decoration: underline;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+h1 {
+  font-family: 'Catamaran', sans-serif;
   font-weight: 800;
 }
 a {
@@ -58,7 +53,7 @@ hr.small {
   left: 0;
   width: 100%;
   z-index: 3;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Catamaran', sans-serif;
   background-color: #fff;
 }
 .navbar-custom .navbar-brand {
@@ -215,7 +210,7 @@ form label {
     font-weight: normal;
     padding: 5px;
     line-height: 18px;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Catamaran', sans-serif;
 }
 
 form .txt-fld input {
@@ -251,6 +246,7 @@ form .txt-fld input::-webkit-input-placeholder {
 .section-title {
   text-align: center;
   font-weight: normal;
+  margin-bottom: 50px;
 }
 
 header.intro-header {
@@ -267,7 +263,6 @@ header.intro-header {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 50px;
 }
 .intro-header .site-heading,
 .intro-header .action-heading,
@@ -297,7 +292,7 @@ header.intro-header {
   color: #fff;
   line-height: 1.1;
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Catamaran', sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
 }
@@ -322,7 +317,8 @@ header.intro-header {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 30px;
+    font-size: 50px;
+    color: #a3efff;
   }
 }
 
@@ -364,8 +360,8 @@ header.intro-header {
     border-left: solid 1px #ccc;
 }
 
-.featured-listing {
-  margin-bottom: 50px;
+#featured-listings {
+  padding: 50px 0;
 }
 .featured-listing p{
   font-size: 14px;
@@ -387,13 +383,13 @@ header.intro-header {
   display: block;
 }
 .intro-header .action-heading .subheading {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Catamaran', sans-serif;
   font-size: 24px;
   margin: 10px 0 30px;
   font-weight: 600;
 }
 .intro-header .action-heading .meta {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-style: italic;
   font-weight: 300;
   font-size: 20px;
@@ -526,7 +522,7 @@ form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
 }
 .btn {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Catamaran', sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
@@ -585,6 +581,24 @@ footer ul{
 }
 .carousel-indicators .active {
 background: #428bca;
+}
+
+#why {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+#why img {
+  width: 70px;
+}
+
+#why h4 {
+  margin-bottom: 40px;
+}
+
+section {
+  padding: 50px 0;
 }
 
 ::-moz-selection {
