@@ -82,7 +82,7 @@ hr.small {
     background-color: #fff;
     border-bottom: 1px solid transparent;
   }
-  .navbar-custom .navbar-brand, .home.navbar-custom {
+  .navbar-custom .navbar-brand {
     color: #000;
     padding: 20px;
   }
@@ -99,6 +99,11 @@ hr.small {
     color: #3385A1;
   }
 }
+
+nav.navbar.navbar-default.navbar-custom.navbar-fixed-top.home.is-fixed.is-visible {
+  background: #fff;
+}
+
 @media only screen and (min-width: 1170px) {
   .navbar-custom {
     -webkit-transition: background-color 0.3s;
