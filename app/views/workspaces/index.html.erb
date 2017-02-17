@@ -13,29 +13,19 @@
     <div class="row single-listing">
         <div class="col-md-4">
             <!-- <img class="img-responsive" src="assets/img/post-sample-image.jpg" alt=""> -->
-            <%= image_tag workspaces.picture.url if workspaces.picture %>   
+            <%= image_tag workspaces.picture.url if workspaces.picture? %>  
         </div>
         <div class="col-md-8">
             <h3><%= workspaces.name %></h3>
             <p><%= workspaces.location %></p>
             <p>$<%= workspaces.price %></p>
-            
+         <%= link_to 'View More',  {:controller=>"workspaces", :action=>"show", :host_id => workspaces.host_id, :id => workspaces.id} %>   
         </div>
     </div>
-    <hr>
+    
    
 
    </div>
-
-
-
-
-
-
-
-
-
-
 
 <!-- <div class="container" >
    
@@ -61,4 +51,4 @@
 
             <% end %>
             
-           
+                   

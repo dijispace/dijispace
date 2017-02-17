@@ -1,42 +1,18 @@
 Rails.application.routes.draw do
-
-  #get 'workspaces/index'
-
-  #get 'workspaces/new'
-
-  #get 'workspaces/show'
-
-  #get 'spaces/new'
-
-  #get 'host_session/new'
-
-  #get 'hosts/index'
-
-  #get 'single_listing/index'
-
-  #get 'static_pages/home'
-
-  #get 'static_pages/works'
-
-  #get '/listings', to: 'listings#index'
+  
   root 'static_pages#home'
-  get '/home', to: 'static_pages#home'
+ 
+  resources :hosts do 
+   resources :workspaces
+  end 
 
-  #get '/works', to: 'static_pages#works'
-  
-  #get '/listings', to: 'listings#index'
-  #get '/single' , to: 'listings#show'
-  
-  
-  get '/signup', to: 'users#new'
-  post '/signup', to: 'users#create'
+  get 'list' , to: 'workspaces#new'
+  post 'list', to: 'workspaces#create'
+  get 'search', to: 'workspaces#index'
+  #get 'singlelisting', to: 'workspaces#show' 
 
-  
-  get '/signuphost', to: 'hosts#new'
-  post '/signuphost', to: 'hosts#create'
 
   
-  get '/singlelist', to: 'single_listing#index'
   
   
   get '/login', to: 'session#new'
@@ -48,18 +24,28 @@ Rails.application.routes.draw do
   post '/loginhost', to: 'host_session#create'
   delete '/logouthost', to: 'host_session#destroy'
   
-  get 'list' , to: 'workspaces#new'
-  post 'list', to: 'workspaces#create'
-  get 'search', to: 'workspaces#index'
+  get '/home', to: 'static_pages#home'
+  #get 'payment', to: 'static#pay'
+  get '/works', to: 'static_pages#works'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+  get '/signuphost', to: 'hosts#new'
+  post '/signuphost', to: 'hosts#create'
   
 
-  #root 'listings#index'
+  
 
-  resources  :listings
+  #resources  :listings
   resources  :users
-  resources  :single_listing 
-  resources  :hosts
+  #resources  :hosts 
   resources  :workspaces
+  
+  #root 'listings#index'
+  #get '/listings', to: 'listings#index'
+  #get '/single' , to: 'listings#show'
+  #get '/listings', to: 'listings#index'
+  #get '/singlelist', to: 'single_listing#index'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

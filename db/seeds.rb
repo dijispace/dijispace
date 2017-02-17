@@ -6,13 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Space.delete_all
 
-Space.create!(name:'Workshed',country:'Ghana' ,location:'Baatsona',seats:'5' ,price: '40' )
-Space.create!(name:'Ispace Hub',country:'Ghana' ,location:'Labone',seats:'6' ,price: '30' )
-Space.create!(name:'Impact Hub',country:'Ghana' ,city:'Osu',seats:'7' ,price: '10' )
-Space.create!(name:'Airspace Hub',country:'Ghana' ,city:'Takoradi',seats:'9' ,price: '15' )
-Space.create!(name:'CC Hub',country:'Nigeria' ,city:'Lagos',seats:'9' ,price: '15' )
-Space.create!(name:'Creation Hub',country:'Nigeria' ,city:'Abuja',seats:'9' ,price: '15' )
-Space.create!(name:'Creation Hub',country:'Ghana' ,city:'Baatsona',seats:'9' ,price: '15' )
-Space.create!(name:'Penplusbytes',country:'Ghana' ,city:'Baatsona',seats:'9' ,price: '15' )
+Workspace.create!(host_id:'12', name:'Meltwater Incubator',country:'Ghana' ,location:'Accra',description: 'Welcome to Meltwater. We are more than just an office space; we are a dynamic coworking community of startup founders, freelancers, entrepreneurs and small teams who are working to build dreams.' ,seats:'5' ,price: '40'  , picture: Rails.root.join('/home/worlanyo/Documents/capstone/ForkedCapstone/dijispace/public/uploads/workspace/picture/2/meeting-modern-room-conference-159805.jpeg').open ) 
+Workspace.create!(host_id:'13', name:'Conference Room',country:'Ghana' ,location:'Osu',description: 'Welcome to Workshed. We are more than just an office space; we are a dynamic coworking community of startup founders, freelancers, entrepreneurs and small teams who are working to build dreams.' ,seats:'5' ,price: '40'  , picture: Rails.root.join('/home/worlanyo/Documents/capstone/ForkedCapstone/dijispace/public/uploads/workspace/picture/2/meeting-modern-room-conference-159805.jpeg').open ) 
+Workspace.create!(host_id:'13', name:'Meeting Room',country:'Ghana' ,location:'Osu',description: 'Welcome to Workshed. We are more than just an office space; we are a dynamic coworking community of startup founders, freelancers, entrepreneurs and small teams who are working to build dreams.' ,seats:'5' ,price: '40'  , picture: Rails.root.join('/home/worlanyo/Documents/capstone/ForkedCapstone/dijispace/public/uploads/workspace/picture/2/meeting-modern-room-conference-159805.jpeg').open ) 
+Workspace.create!(host_id:'13', name:'Office Space',country:'Ghana' ,location:'Osu',description: 'Welcome to Workshed. We are more than just an office space; we are a dynamic coworking community of startup founders, freelancers, entrepreneurs and small teams who are working to build dreams.' ,seats:'5' ,price: '40'  , picture: Rails.root.join('/home/worlanyo/Documents/capstone/ForkedCapstone/dijispace/public/uploads/workspace/picture/2/meeting-modern-room-conference-159805.jpeg').open ) 
+Workspace.create!(host_id:'12', name:'Impact Hub',country:'Ghana' ,location:'Accra',description: 'Welcome to Impact Hub. We are more than just an office space; we are a dynamic coworking community of startup founders, freelancers, entrepreneurs and small teams who are working to build dreams.' ,seats:'5' ,price: '40'  , picture: Rails.root.join('/home/worlanyo/Documents/capstone/ForkedCapstone/dijispace/public/uploads/workspace/picture/2/meeting-modern-room-conference-159805.jpeg').open ) 
+Workspace.create!(host_id:'12', name:'Ispace Hub',country:'Ghana' ,location:'Accra',description: 'Welcome to Ispace. We are more than just an office space; we are a dynamic coworking community of startup founders, freelancers, entrepreneurs and small teams who are working to build dreams.' ,seats:'5' ,price: '40'  , picture: Rails.root.join('/home/worlanyo/Documents/capstone/ForkedCapstone/dijispace/public/uploads/workspace/picture/2/meeting-modern-room-conference-159805.jpeg').open ) 

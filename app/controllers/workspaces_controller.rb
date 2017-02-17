@@ -5,6 +5,7 @@ class WorkspacesController < ApplicationController
   end
 
   def show
+    #user.microposts.find_by(id: 1)
   	@workspace = Workspace.find(params[:id])
   end
   
@@ -18,7 +19,9 @@ class WorkspacesController < ApplicationController
    #@workspace = Workspace.new(workspaces_params)
    @workspace = current_host.workspaces.build(workspaces_params)
    if @workspace.save
-   	redirect_to @workspace
+   	#
+    flash[:success] = 'Registration Successful'
+    redirect_to @workspace
    else
    	render 'new'
   end
@@ -26,7 +29,7 @@ end
 
   private
    def workspaces_params
-   	params.require(:workspace).permit(:picture,:name,:location,:description,:price,:seats,:country)
+   	params.require(:workspace).permit(:id,:picture,:name,:location,:description,:price,:seats,:country)
    end
   
 
