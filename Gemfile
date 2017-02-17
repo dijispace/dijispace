@@ -40,9 +40,12 @@ gem 'fog',                     '1.38.0'
 
 gem 'bcrypt', '3.1.11'
 #Use Bootstap
- gem 'bootstrap-sass', '3.3.6'
+ #gem 'bootstrap-sass', '3.3.6'
  gem 'font-awesome-sass', '~> 4.6.2'
  #gem "font-awesome-rails", "~> 4.3"
+
+ gem 'bootstrap-sass', '~> 3.3.6'
+#gem 'sass-rails', '>= 3.2'
  gem 'awesome_print', require:"ap"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

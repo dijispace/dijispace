@@ -1,30 +1,64 @@
 <br>
 <br>
 <br>
- 
+<br> 
 
 
-<% link_to @workspace do %> 
+
+
+
+
 <% @workspace.each do |workspaces| %>
+<div class="container listings">
+    <div class="row single-listing">
+        <div class="col-md-4">
+            <!-- <img class="img-responsive" src="assets/img/post-sample-image.jpg" alt=""> -->
+            <%= image_tag workspaces.picture.url if workspaces.picture %>   
+        </div>
+        <div class="col-md-8">
+            <h3><%= workspaces.name %></h3>
+            <p><%= workspaces.location %></p>
+            <p>$<%= workspaces.price %></p>
+            
+        </div>
+    </div>
+    <hr>
+   
 
-<div class="container" >
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container" >
    
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="panel-info">
-                  <%= image_tag workspaces.picture.url if workspaces.picture %>   
+                  
                 </div>
                 <div class="panel-more1">
                    
-                  <p><%= workspaces.name  %> </p> 
-                  <p><%= workspaces.location %></p>
+                  <p> </p> 
+                  <p></p>
                   
-                  <p> $<%= workspaces.price %> </p>
+                  <p>  </p>
                   </div>
                   
             </div>
             </div>
-            </div>
+            </div> -->
+
+
+
 
             <% end %>
-           <% end %>
+            
+           

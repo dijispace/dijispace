@@ -16,6 +16,15 @@ class Workspace < ApplicationRecord
     
   validates :name, presence: true 
 
+
+
+  def self.search(search)
+        if search.present?
+          where("location @@ :q or country @@ :q " , q: search)
+        else
+          where(nil)
+        end
+      end
   # validates :country, presence: true 	
     #Custom validation
   # validate :picture_size
@@ -28,13 +37,7 @@ class Workspace < ApplicationRecord
       	end
       end
 
-      def self.search(search)
-        if search.present?
-          where("location @@ :q or name @@ :q or country @@ :q " , q: search)
-        else
-          where(nil)
-        end
-      end
+      
 
     # where("city @@ :q or name @@ :q or country @@ :q", q: search)
    
