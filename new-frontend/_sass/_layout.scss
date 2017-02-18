@@ -656,15 +656,15 @@ background: #428bca;
 }
 
 @media only screen and (min-width: 768px) {
-  .details .card {
+  .details.card {
     margin: 15px 2.5% 0;
   }
 
-  .details .card:first-child {
+  .details.card:first-child {
     margin-right: 0;
   }
 
-  .details .card:last-child{
+  .details.card:last-child{
     margin-left: 0;
   }
 

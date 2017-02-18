@@ -645,11 +645,11 @@ footer ul {
   -webkit-box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.1); }
 
 @media only screen and (min-width: 768px) {
-  .details .card {
+  .details.card {
     margin: 15px 2.5% 0; }
-  .details .card:first-child {
+  .details.card:first-child {
     margin-right: 0; }
-  .details .card:last-child {
+  .details.card:last-child {
     margin-left: 0; }
   .card-page .col-md-8 {
     width: 62.5%; }
