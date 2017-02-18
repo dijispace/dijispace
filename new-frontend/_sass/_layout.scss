@@ -587,3 +587,94 @@ background: #428bca;
     width: 100%; 
   }
 }
+
+.reserve:nth-child(4n+1) {
+    clear: left;
+}
+
+.reserve {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+}
+
+.reserve {
+    position: relative;
+}
+
+.form_input-md {
+    height: 40px;
+    color: #231f20;
+}
+
+.form_input {
+    padding: 10px;
+    border-radius: 0;
+    color: #292e33;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+}
+
+.fixed-height {
+    height: 40px;
+    padding: 10px;
+}
+
+.stepperInput__input {
+    border-left: 0;
+    border-right: 0;
+    width: 60px;
+    text-align: center;
+}
+
+.select_input {
+    height: 40px;
+    width: 100%;
+    font-weight: 300;
+    // background-color: transparent;
+    padding: 10px;
+    border-color: #d2d2d2;
+    border-style: solid;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border-radius: 0;
+}
+
+.card {
+  padding: 25px;
+  margin: 25px 0;
+  box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.1);
+  -moz-box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.1);
+  -webkit-box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.1);
+}
+
+@media only screen and (min-width: 768px) {
+  .details .card {
+    margin: 15px 2.5% 0;
+  }
+
+  .details .card:first-child {
+    margin-right: 0;
+  }
+
+  .details .card:last-child{
+    margin-left: 0;
+  }
+
+  .card-page .col-md-8 {
+    width: 62.5%;
+  }
+
+  .card-page .col-md-4 {
+    width: 32.5%;
+  }
+
+
+}
