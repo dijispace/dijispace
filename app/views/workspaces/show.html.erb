@@ -14,8 +14,74 @@
         </div>
     </header>
 
+
+    
+     <!-- Main Content -->
+    <div class="container card-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12 card">
+                <div class="col-md-8 reserve-left">
+                    <div class="start-date reserve">
+                        <label class="form_label">Start Date</label>
+                        <!-- <input type="text" class="form_input form_input-md" value="" id="date-picker1" readonly=""> -->
+                        <input type="text" id="datepicker">
+                    </div>
+                    <div class="seats reserve">
+                        <label class="form_label">Duration</label>
+                        <div class="stepperInput">
+                            <input type="text" placeholder="Age" value="1" class="stepperInput_input fixed-height" id="duration">
+                        </div>
+                    </div>
+                    <div class="pricing-type reserve">
+                        <label class="form_label">Duration Type</label>
+                        <select class="select_input select_input-full select_input-md" id="duration-type">
+                            <option>Daily</option>                            
+                            <option>Weekly</option>                            
+                            <option>Monthly</option>                            
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4 reserve-right">
+                    <h4 class="price" id="hostprice" >GHC <%= @workspace.price %></h4>
+                    
+                    <div class="space-price" id='total'></div>
+                    <div class="duration__box" id='total-duration'></div>
+                        
+                    <button class="btn btn-info book" type="button">Book Space</button>
+                </div>
+                </div>
+                <!--<div class="col-md-12 details">-->
+                <div class="col-md-8 details card">
+                    <article>
+                        <p><%= @workspace.description %></p>
+
+                       
+                    </article>
+                </div>
+
+                <div class="col-md-4 details card">
+                    <h5>Features</h5>
+                    <i class="fa fa-wifi" aria-hidden="true"></i>
+                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                    <i class="fa fa-beer" aria-hidden="true"></i>
+                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
+
+                    <h5>Review</h5>
+                    <p>&#9733;&#9733;&#9734;&#9734;&#9734;</p>
+                </div>
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+
+
+     
+
+
     <!-- Main Content -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 
@@ -44,8 +110,14 @@
             </div>
         </div>
     </div>
-
+ -->
     <hr>
+
+   
+
+
+
+
 
     <!-- Footer -->
     <footer>
@@ -78,6 +150,130 @@
 
 
 
+  <script type="text/javascript">
+          var dt = new Date()
+          var day = dt.getDate();
+          var month = dt.getMonth() + 1;
+          var year = dt.getFullYear();
+          var todaysDate = year + '-' + month + '-' + day;
+          var hourly = '0';
+          var daily = '2000';
+          var weekly = '10000';
+          var monthly = '30000';
+          var yearly = '0';
+          //var currency = '&#8358;';
+
+
+          var picker = new Pikaday(
+            { 
+                field: document.getElementById('datepicker'),
+                format: 'YYYY-MM-D' ,
+                firstDay: 1,
+                minDate: new Date(todaysDate),
+                maxDate: new Date('2030-12-31'),
+                yearRange: [2017,2040],
+                onSelect: function() {
+            console.log(this.getMoment().format('Do MMMM YYYY'));
+           }
+
+            });
+
+          var picker = new Pikaday(
+            {
+                field: document.getElementById('start-date'),
+                firstDay: 1,
+                minDate: new Date(todaysDate),
+                maxDate: new Date('2030-12-31'),
+                yearRange: [2017,2040]
+            });
+
+          function number_format(number,decimals,dec_point,thousands_sep)
+          {
+            number = (number + '').replace(/[^0-9+\-Ee.]/g,'');
+            var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+          }
+
+    //Calculate Total Price
+    function calculate_total_price(){
+    var duration = $('#duration').val();
+    var durationType = $('#duration-type').val();
+    var screenWidth = $(window).width();
+    var hostprice = $('#hostprice').val()
+
+    if(screenWidth > 1100){
+        switch(durationType){
+            case 'Hourly':
+                $('#total-duration').html('Total for ' + duration + ' hour(s)');
+                return duration * hourly;
+            case 'Daily':
+                $('#total-duration').html('Total for ' + duration + ' day(s)');
+                return duration * daily;
+            case 'Weekly':
+                $('#total-duration').html('Total for ' + duration + ' week(s)');
+                return duration * weekly;
+            case 'Monthly':
+                $('#total-duration').html('Total for ' + duration + ' month(s)');
+                return duration * monthly;
+            case 'Yearly':
+                $('#total-duration').html('Total for ' + duration + ' year(s)');
+                return duration * yearly;
+        }
+    }
+    else{
+        //mobile
+        var mobileDurationType = $('#duration-select').val();
+        var durationMobile = $('#duration-mobile').val();
+        switch(mobileDurationType){
+            case 'Hourly':
+                return durationMobile * hourly;
+            case 'Daily':
+                return durationMobile * daily;
+            case 'Weekly':
+                return durationMobile * weekly;
+            case 'Monthly':
+                return durationMobile * monthly;
+            case 'Yearly':
+                return durationMobile * yearly;
+        }
+    }
+}
+
+calculate_total_price();
+
+setInterval(function(){
+    var totalPrice = hostprice + number_format(calculate_total_price());
+    //var totalPrice = currency + number_format(calculate_total_price());
+    //var totalPrice = number_format(calculate_total_price());
+    $('#total').html(totalPrice);
+    $('#total-calc-mobile').html(totalPrice);
+},300);
+
+$('.close-tab').click(function(){
+    $('.tabs, #overlay').hide();
+});
+
+
+
+
+  </script>
 
 
 
@@ -92,13 +288,5 @@
 
 
 
-
-<br>
-<br>
-<br>
-
-
-<br>
-<br>
 
 

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+# git_source(:github) do |repo_name|
+#   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+#   "https://github.com/#{repo_name}.git"
+# end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,6 +37,7 @@ gem 'mini_magick',             '4.5.1'
 
 gem 'fog',                     '1.38.0'
 
+gem 'paystack'
 
 gem 'bcrypt', '3.1.11'
 #Use Bootstap
@@ -49,6 +50,8 @@ gem 'bcrypt', '3.1.11'
  gem 'awesome_print', require:"ap"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+ gem "pikaday-gem"
+ gem 'momentjs-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
