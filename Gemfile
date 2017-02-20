@@ -52,7 +52,9 @@ gem 'bcrypt', '3.1.11'
 # gem 'capistrano-rails', group: :development
  gem "pikaday-gem"
  gem 'momentjs-rails'
+ gem 'cloudinary' 
 
+  
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
