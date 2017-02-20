@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dgms9ejec
+  api_key: '751822414245969'
+  api_secret: dwc3OJpJS5kyVRcIEoYE9MD-HZA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dgms9ejec
+  api_key: '751822414245969'
+  api_secret: dwc3OJpJS5kyVRcIEoYE9MD-HZA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dgms9ejec
+  api_key: '751822414245969'
+  api_secret: dwc3OJpJS5kyVRcIEoYE9MD-HZA
+  enhance_image_tag: true
+  static_image_support: false
