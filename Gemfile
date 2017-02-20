@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave',             '0.11.2'
 
+gem 'cloudinary'
+
 gem 'mini_magick',             '4.5.1'
 
 gem 'fog',                     '1.38.0'
@@ -52,7 +54,7 @@ gem 'bcrypt', '3.1.11'
 # gem 'capistrano-rails', group: :development
  gem "pikaday-gem"
  gem 'momentjs-rails'
- gem 'cloudinary' 
+  
 
   
 group :development, :test do
