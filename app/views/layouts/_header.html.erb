@@ -18,6 +18,10 @@
                     <!-- <a href="#">Register Your Space</a> -->
                     <%= link_to "Register Your Space" , signuphost_path%>
                 </li>
+
+                <li>
+                    <%= link_to "Host Login" , loginhost_path %>
+                </li>
                 <% if logged_in? %>
                 <li><%= link_to "Users", '#' %></li>
                     <li class="dropdown">

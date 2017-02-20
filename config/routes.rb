@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'list' , to: 'workspaces#new'
   post 'list', to: 'workspaces#create'
   get 'search', to: 'workspaces#index'
+  # get 'edit' , to: 'workspaces#'
    
 
   #User Signup routes

@@ -22,11 +22,26 @@ class WorkspacesController < ApplicationController
    @workspace = current_host.workspaces.build(workspaces_params)
    if @workspace.save
    	#
-    flash[:success] = 'Registration Successful'
+    flash.now[:success] = 'Registration Successful'
     redirect_to @workspace
    else
    	render 'new'
   end
+end
+
+ def edit
+   @workspace = Workspace.find(params[:id])
+ end
+
+ def update
+   @workspace = Workspace.find(params[:id])
+     if @workspace.update_attributes(workspaces_params)
+      flash.now[:success] = "Workspace updated"
+      redirect_to @workspace
+
+    else
+      render 'edit'
+ end 
 end
 
   private

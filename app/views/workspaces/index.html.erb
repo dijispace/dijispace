@@ -11,7 +11,7 @@
         <div class="col-md-8">
             <h3><%= workspaces.name %></h3>
             <p><%= workspaces.location %></p>
-            <p>GHC<%= workspaces.price %></p>
+            <p><%= workspaces.price %></p>
             <!-- <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet felis eu lorem lacinia ullamcorper vitae in nisl. Sed at nulla at nisi tincidunt scelerisque nec vitae metus. Quisque ligula est, convallis fermentum blandit a, elementum ac augue. Sed ut interdum dui, vitae scelerisque metus....</article> -->
             <%= link_to 'View More',  {:controller=>"workspaces", :action=>"show", :host_id => workspaces.host_id, :id => workspaces.id} , class: "btn btn-info" %> 
         </div>
