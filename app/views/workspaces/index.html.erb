@@ -1,54 +1,43 @@
-<br>
-<br>
-<br>
-<br> 
-
-
-
-
-
-
-<% @workspace.each do |workspaces| %>
+<div class="page-content">
+      <div class="wrapper">
+        
+     <% @workspace.each do |workspaces| %> 
 <div class="container listings">
     <div class="row single-listing">
         <div class="col-md-4">
             <!-- <img class="img-responsive" src="assets/img/post-sample-image.jpg" alt=""> -->
-            <%= image_tag workspaces.picture.url if workspaces.picture? %>  
+            <%= image_tag workspaces.picture.url if workspaces.picture? %>
         </div>
         <div class="col-md-8">
             <h3><%= workspaces.name %></h3>
             <p><%= workspaces.location %></p>
-            <p>$<%= workspaces.price %></p>
-         <%= link_to 'View More',  {:controller=>"workspaces", :action=>"show", :host_id => workspaces.host_id, :id => workspaces.id} %>   
+            <p>GHC<%= workspaces.price %></p>
+            <!-- <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet felis eu lorem lacinia ullamcorper vitae in nisl. Sed at nulla at nisi tincidunt scelerisque nec vitae metus. Quisque ligula est, convallis fermentum blandit a, elementum ac augue. Sed ut interdum dui, vitae scelerisque metus....</article> -->
+            <%= link_to 'View More',  {:controller=>"workspaces", :action=>"show", :host_id => workspaces.host_id, :id => workspaces.id} , class: "btn btn-info" %> 
         </div>
     </div>
     
    
 
-   </div>
+</div>
+ <% end %>
 
-<!-- <div class="container" >
-   
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="panel-info">
-                  
-                </div>
-                <div class="panel-more1">
-                   
-                  <p> </p> 
-                  <p></p>
-                  
-                  <p>  </p>
-                  </div>
-                  
-            </div>
-            </div>
-            </div> -->
+
+
+      </div>
+    </div>
 
 
 
 
-            <% end %>
-            
+    
+
+
+
+
+
+
+
+
+
                    

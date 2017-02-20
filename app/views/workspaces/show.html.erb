@@ -1,7 +1,8 @@
   
 <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header single-listing" <%= image_tag @workspace.picture.url if @workspace.picture? %> >
+    
+      <header class="intro-header single-listing" style="background-image: url(<%= asset_path('pexels-photo.jpg') %>) ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -14,9 +15,11 @@
         </div>
     </header>
 
-
     
-     <!-- Main Content -->
+
+     <div class="page-content">
+      <div class="wrapper">
+         <!-- Main Content -->
     <div class="container card-page">
         <div class="row">
             <div class="col-md-12">
@@ -25,12 +28,12 @@
                     <div class="start-date reserve">
                         <label class="form_label">Start Date</label>
                         <!-- <input type="text" class="form_input form_input-md" value="" id="date-picker1" readonly=""> -->
-                        <input type="text" id="datepicker">
+                        <input type="text" id="datepicker" class="form_input form_input-md" value="" id="date-picker1" readonly="">
                     </div>
                     <div class="seats reserve">
                         <label class="form_label">Duration</label>
                         <div class="stepperInput">
-                            <input type="text" placeholder="Age" value="1" class="stepperInput_input fixed-height" id="duration">
+                            <input type="text"  value="1" class="stepperInput_input fixed-height" id="duration">
                         </div>
                     </div>
                     <div class="pricing-type reserve">
@@ -43,13 +46,16 @@
                     </div>
                 </div>
                 <div class="col-md-4 reserve-right">
-                    <h4 class="price" id="hostprice" >GHC <%= @workspace.price %></h4>
-                    
+                    <!-- <p class="price" id="hostprice" > <%= @workspace.price %></p> -->
+                    <div class="hostprice" id="hostprice">  <%= @workspace.price %>  </div>
                     <div class="space-price" id='total'></div>
                     <div class="duration__box" id='total-duration'></div>
-                        
-                    <button class="btn btn-info book" type="button">Book Space</button>
-                </div>
+                    <form >
+                 <script src="https://js.paystack.co/v1/inline.js"></script>
+              <button  class="btn btn-info book" type="button" onclick="payWithPaystack()"> Pay </button> 
+                 </form>    
+                    <!-- <button class="btn btn-info book" type="button">Book Space</button>
+ -->                </div>
                 </div>
                 <!--<div class="col-md-12 details">-->
                 <div class="col-md-8 details card">
@@ -80,44 +86,10 @@
      
 
 
-    <!-- Main Content -->
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                
-                <div class="col-md-8">
-                    <article>
-                        <p><%= @workspace.description %></p>
-                        
-                    </article>
-                </div>
-
-                <div class="col-md-4">
-                    <h5>Features</h5>
-                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                    <i class="fa fa-beer" aria-hidden="true"></i>
-                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
-
-                    <h5>Review</h5>
-                    <p>&#9733;&#9733;&#9734;&#9734;&#9734;</p>     
-                    <a href="/works"><button class="btn btn-info book" type="button" href="">Book Space</button></a>               
-                    
-                   
-
-                </div>
-
-            </div>
-        </div>
-    </div>
- -->
     <hr>
-
-   
-
-
-
-
+      </div>
+    </div>
+    
 
     <!-- Footer -->
     <footer>
@@ -157,12 +129,12 @@
           var year = dt.getFullYear();
           var todaysDate = year + '-' + month + '-' + day;
           var hourly = '0';
-          var daily = '2000';
-          var weekly = '10000';
-          var monthly = '30000';
+          var daily = '1';
+          var weekly = '7';
+          var monthly = '30';
           var yearly = '0';
-          //var currency = '&#8358;';
-
+          var currency = '&#8373;';
+         
 
           var picker = new Pikaday(
             { 
@@ -216,25 +188,35 @@
     var duration = $('#duration').val();
     var durationType = $('#duration-type').val();
     var screenWidth = $(window).width();
-    var hostprice = $('#hostprice').val()
+    //var hostprice = $('#hostprice').val();
+    //var xx = parseInt(document.getElementById("hostprice").value);
+    //var xx = document.getElementById("hostprice").innerHTML;
+     //var hostprice = $('#hostprice').text();
+     //var price = parseInt(text,10);
+     var x = document.getElementById('hostprice');
+     var nr =x.innerText;
+     
+    //var x = document.getElementById("myNumber").value;
+   // var x = document.getElementById("total").value;               
+    //$('#hostprice').val()
 
     if(screenWidth > 1100){
         switch(durationType){
-            case 'Hourly':
-                $('#total-duration').html('Total for ' + duration + ' hour(s)');
-                return duration * hourly;
+            //case 'Hourly':
+              //  $('#total-duration').html('Total for ' + duration + ' hour(s)');
+                //return duration * hourly;
             case 'Daily':
                 $('#total-duration').html('Total for ' + duration + ' day(s)');
-                return duration * daily;
+                return    duration * daily;
             case 'Weekly':
                 $('#total-duration').html('Total for ' + duration + ' week(s)');
-                return duration * weekly;
+                return   duration * weekly ;
             case 'Monthly':
                 $('#total-duration').html('Total for ' + duration + ' month(s)');
-                return duration * monthly;
+                return   duration * monthly ;
             case 'Yearly':
                 $('#total-duration').html('Total for ' + duration + ' year(s)');
-                return duration * yearly;
+                return duration ;
         }
     }
     else{
@@ -243,15 +225,15 @@
         var durationMobile = $('#duration-mobile').val();
         switch(mobileDurationType){
             case 'Hourly':
-                return durationMobile * hourly;
+                return durationMobile * hostprice;
             case 'Daily':
-                return durationMobile * daily;
+                return durationMobile * hostprice;
             case 'Weekly':
-                return durationMobile * weekly;
+                return durationMobile * hostprice;
             case 'Monthly':
-                return durationMobile * monthly;
+                return durationMobile * hostprice;
             case 'Yearly':
-                return durationMobile * yearly;
+                return durationMobile * hostprice;
         }
     }
 }
@@ -259,12 +241,15 @@
 calculate_total_price();
 
 setInterval(function(){
-    var totalPrice = hostprice + number_format(calculate_total_price());
-    //var totalPrice = currency + number_format(calculate_total_price());
+    //var totalPrice =  number_format(calculate_total_price());
+    var x = document.getElementById('hostprice');
+     var nr =x.innerText;
+    var totalPrice = currency + nr * number_format(calculate_total_price());
     //var totalPrice = number_format(calculate_total_price());
+    //$('#hostprice').html(totalPrice);
     $('#total').html(totalPrice);
-    $('#total-calc-mobile').html(totalPrice);
-},300);
+    //$('#total-calc-mobile').html(totalPrice);
+            },300);
 
 $('.close-tab').click(function(){
     $('.tabs, #overlay').hide();
@@ -279,6 +264,34 @@ $('.close-tab').click(function(){
 
 
 
+ 
+
+ <script>
+  function payWithPaystack(){
+    var handler = PaystackPop.setup({
+      key: 'pk_test_5638d7600224d02d21d840f4a48d8e1d58cb50b2',
+      email: 'sampleuser@gmail.com',
+      amount: 10000,
+      ref: "6",
+      metadata: {
+         custom_fields: [
+            {
+                display_name: "New Customer",
+                variable_name: "New_customer",
+                value: "+234242206604"
+            }
+         ]
+      },
+      callback: function(response){
+          alert('success. transaction ref is ' + response.reference);
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();
+  }
+</script>
 
 
 

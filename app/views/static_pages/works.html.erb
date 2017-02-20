@@ -6,38 +6,7 @@
  <br>
  <br>
 
-<form >
-  <script src="https://js.paystack.co/v1/inline.js"></script>
-  <button type="button" onclick="payWithPaystack()"> Pay </button> 
-</form>
- 
 
- <script>
-  function payWithPaystack(){
-    var handler = PaystackPop.setup({
-      key: 'pk_test_5638d7600224d02d21d840f4a48d8e1d58cb50b2',
-      email: 'worlali@gmail.com',
-      amount: 10000,
-      ref: "5",
-      metadata: {
-         custom_fields: [
-            {
-                display_name: "New Customer",
-                variable_name: "New_customer",
-                value: "+234242206604"
-            }
-         ]
-      },
-      callback: function(response){
-          alert('success. transaction ref is ' + response.reference);
-      },
-      onClose: function(){
-          alert('window closed');
-      }
-    });
-    handler.openIframe();
-  }
-</script>
 
 <!-- <section  >
 <div class="container">

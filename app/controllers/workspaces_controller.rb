@@ -2,6 +2,8 @@ class WorkspacesController < ApplicationController
   
   def index
     @workspace = Workspace.search(params[:search])
+
+    # UsersController.render :new , assigns: { user }
   end
 
   def show
