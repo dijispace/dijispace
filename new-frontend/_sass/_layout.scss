@@ -273,9 +273,9 @@ header.intro-header {
 
 .single-listing {
   padding: 25px;
-  box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.3);
-  -moz-box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.3);
-  -webkit-box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.3);
+  box-shadow: 0px 0px 5px 1px rgba(119, 119, 119, 0.2);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(119, 119, 119, 0.2);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(119, 119, 119, 0.2);
 }
 
 .site-heading h1 {
@@ -292,6 +292,16 @@ header.intro-header {
 
 .listings {
   margin-top: 100px;
+}
+
+.listings .col-md-6 {
+  margin-right: 2.5%;
+  width: 47.5%;
+}
+
+.listings .col-md-6:last-child {
+  margin-left: 2.5%;
+  margin-right: 0;
 }
 
 #top-search-input{
