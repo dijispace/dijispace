@@ -408,10 +408,6 @@ header.intro-header {
   border-bottom: thin solid #f3f3f3;
 }
 
-.book {
-  width: 100%;
-}
-
 .section-heading {
   font-size: 36px;
   margin-top: 60px;
@@ -647,25 +643,32 @@ background: #428bca;
     border-radius: 0;
 }
 
+.price {
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 34px;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
 .card {
+  background-color: #fff;
   padding: 25px;
   margin: 25px 0;
-  box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.1);
+  box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.01);
   -moz-box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.1);
   -webkit-box-shadow: 0px 0px 12px 1px rgba(119, 119, 119, 0.1);
 }
 
 @media only screen and (min-width: 768px) {
-  .details.card {
-    margin: 15px 2.5% 0;
+
+  .col-md-8.details.card {
+    margin-right: 2.5%;
   }
 
-  .details.card:first-child {
-    margin-right: 0;
-  }
-
-  .details.card:last-child{
-    margin-left: 0;
+  .col-md-4.details.card:last-child{
+    margin-left: 2.5%;
   }
 
   .card-page .col-md-8 {
@@ -676,5 +679,8 @@ background: #428bca;
     width: 32.5%;
   }
 
+}
 
+.details .col-md-3 {
+  padding: 0 5px;
 }
