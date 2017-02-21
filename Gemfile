@@ -54,7 +54,7 @@ gem 'bcrypt', '3.1.11'
 # gem 'capistrano-rails', group: :development
  gem "pikaday-gem"
  gem 'momentjs-rails'
-  
+ gem "animate-rails" 
 
   
 group :development, :test do

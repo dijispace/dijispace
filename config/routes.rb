@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #Host Signup routes
   get '/signuphost', to: 'hosts#new'
   post '/signuphost', to: 'hosts#create'
-  
+  get 'dashboard' , to: 'host#index'
 
   #User Login routes
   get '/login', to: 'session#new'
