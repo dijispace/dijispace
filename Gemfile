@@ -42,6 +42,8 @@ gem 'fog',                     '1.38.0'
 gem 'paystack'
 
 gem 'bcrypt', '3.1.11'
+
+gem 'responders'
 #Use Bootstap
  #gem 'bootstrap-sass', '3.3.6'
  gem 'font-awesome-sass', '~> 4.6.2'

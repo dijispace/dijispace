@@ -6,9 +6,8 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <!-- <a class="navbar-brand" href="index.html"><img class="img-responsive" src="assets/img/logo.png" alt="Diji Logo" /></a> -->
+          
             <%= link_to image_tag("logo.png" , class: "img-responsive"), root_path, class: "navbar-brand" %>
-
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,11 +16,7 @@
                 <li>
                     <!-- <a href="#">Register Your Space</a> -->
                     <%= link_to "Register Your Space" , signuphost_path%>
-                </li>
-
-                <li>
-                    <%= link_to "Host Login" , loginhost_path %>
-                </li>
+                </li>                
                 <% if logged_in? %>
                 <li><%= link_to "Users", '#' %></li>
                     <li class="dropdown">
@@ -36,19 +31,10 @@
                 </ul>
             </li>
               <% else %>    
-            
-                    <li>
-                        <!-- <a href="#login-box" class="login-window">Log In</a> -->
+                    <li> 
                         <%= link_to "Login" , login_path %>
-                    </li>
-                <!-- <li>
-                    <a id="come" rel="leanModal" name="login" href="#login">Log In</a>
-                </li> -->
-                <!-- <li>
-                    <a id="go" rel="leanModal" name="signup" href="#signup">Sign Up</a>
-                </li> -->
+                    </li>               
                 <li>
-                        <!-- <a id="go" rel="leanModal" name="signup" href="#signup">Sign Up</a> -->
                          <%= link_to "Sign Up" , signup_path %>
                     </li>
                     <% end %>
