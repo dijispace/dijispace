@@ -56,7 +56,7 @@ gem 'responders'
 # gem 'capistrano-rails', group: :development
  gem "pikaday-gem"
  gem 'momentjs-rails'
-  
+ gem "animate-rails" 
 
   
 group :development, :test do
