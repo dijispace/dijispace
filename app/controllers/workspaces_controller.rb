@@ -2,18 +2,20 @@ class WorkspacesController < ApplicationController
   
   def index
     @workspace = Workspace.search(params[:search])
-
-    # UsersController.render :new , assigns: { user }
   end
 
   def show
     #user.microposts.find_by(id: 1)
-  	@workspace = Workspace.find(params[:id])
+    @workspace = Workspace.find(params[:id])
+    @user = User.new(params[:user_id]) 
+    #render controller: :users, action: :new
+    render 'users/new'
+    
   end
   
   def new
   	@workspace = Workspace.new
-    
+    # render controller: :users, action: :new
   end
 
   def create
