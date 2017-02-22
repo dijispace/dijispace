@@ -698,3 +698,24 @@ background: #428bca;
 .details .col-md-3 {
   padding: 0 5px;
 }
+
+img.logo.img-responsive {
+    width: 50%;
+    margin: auto;
+}
+
+.details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.details ul li {
+    display: inline;
+    padding: 5px;
+    border: thin solid #000;
+    border-radius: 4px;
+}
+
+.details i.fa {
+    padding: 0 5px;
+}
