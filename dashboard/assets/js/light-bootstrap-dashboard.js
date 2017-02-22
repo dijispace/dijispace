@@ -55,6 +55,12 @@ $(document).ready(function(){
 $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
 });
 
+    // For switching active class on sidebar menu
+$(".nav li").on("click", function() {
+    $(".nav li").removeClass("active");
+    $(this).addClass("active");
+});
+
 // activate collapse right menu when the windows is resized
 $(window).resize(function(){
     if($(window).width() <= 991){

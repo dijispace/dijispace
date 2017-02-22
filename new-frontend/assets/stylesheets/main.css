@@ -603,6 +603,61 @@ footer ul {
 
 .reserve {
   position: relative; }
+  .reserve .fixed-height {
+    height: 40px; }
+  .reserve .border-none {
+    border: none; }
+  .reserve .button--addOnRight {
+    border-width: 1px 1px 1px 0px; }
+  .reserve .button {
+    cursor: pointer;
+    padding: 5px 5px;
+    color: #797777;
+    font-size: 12px;
+    background-color: #f7f7f7;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d1d1d1;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    width: 40px;
+    outline: 0; }
+
+.form-icon__section {
+  position: absolute;
+  height: 38px;
+  width: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background-color: #f7f7f7;
+  pointer-events: none;
+  bottom: 1px;
+  color: #797777;
+  right: 1px; }
+
+[class^="icon-"].icon-sm, [class*=" icon-"].icon-sm {
+  height: 20px;
+  width: 20px; }
+
+[class^="icon-"], [class*=" icon-"] {
+  height: 25px;
+  width: 19px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: middle; }
+
+svg:not(:root) {
+  overflow: hidden; }
 
 .form_input-md {
   height: 40px;
