@@ -35,7 +35,7 @@
                         <%= link_to "Login" , login_path %>
                     </li>               
                 <li>
-                         <%= link_to "Sign Up" , signup_path %>
+                         
                     </li>
                     <% end %>
             </ul>
@@ -51,7 +51,15 @@
 <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     
-      <header class="intro-header single-listing" style="background-image: url(<%= asset_path('pexels-photo.jpg') %>) ">
+     
+
+    
+    
+
+    <div class="page-content">
+      <div class="wrapper">
+
+        <header class="intro-header single-listing" style="background-image: url(<%= asset_path('tpx-hub.jpg') %>) ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -64,10 +72,6 @@
         </div>
     </header>
 
-    
-
-    <div class="page-content">
-      <div class="wrapper">
          <!-- Main Content -->
     <div class="container card-page">
         <div class="row">
@@ -99,13 +103,14 @@
                     <div class="hostprice" id="hostprice">  <%= @workspace.price %>  </div>
                     <div class="space-price" id='total'></div>
                     <div class="duration__box" id='total-duration'></div>
-                    <!-- <form >
-                 <script src="https://js.paystack.co/v1/inline.js"></script> -->
+                    <form >
+                 <script src="https://js.paystack.co/v1/inline.js"></script>
                  <!-- onclick="payWithPaystack()" -->
-              <!-- <button  class="btn btn-info book" type="button" > Book Space </button>  -->
-      <%= button_to "Book Space", signup_url , :class => "btn btn-info book"  %>
+              <button  class="btn btn-info book" onclick="payWithPaystack()" type="button" > Book Space </button> 
+              <!-- signup_path -->
+      
               
-                 <!-- </form> -->    
+                 </form>    
                     <!-- <button class="btn btn-info book" type="button">Book Space</button>
  -->                </div>
                 </div>
@@ -119,14 +124,23 @@
                 </div>
 
                 <div class="col-md-4 details card">
-                    <h5>Features</h5>
-                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                    <i class="fa fa-beer" aria-hidden="true"></i>
-                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                     <img class="logo img-responsive" src="assets/img/tpx-logo.png" alt="">
 
-                    <h5>Review</h5>
-                    <p>&#9733;&#9733;&#9734;&#9734;&#9734;</p>
+                    <h3>Address</h3>
+                    <p>16, Alfred Olaiya Street,
+                    Off Oroleye Crescent, Opebi,
+                    Ikeja, Lagos.</p>
+
+                    <h3>Features</h3>
+                    <ul>
+                        <li>WiFi<i class="fa fa-wifi" aria-hidden="true"></i></li>
+                        <li>Food<i class="fa fa-cutlery" aria-hidden="true"></i></li>
+                        <li>Alcohol<i class="fa fa-beer" aria-hidden="true"></i></li>
+                        <li>Meeting Room<i class="fa fa-handshake-o" aria-hidden="true"></i></li>
+                    </ul>
+
+                    <!-- <h5>Review</h5>
+                    <p>&#9733;&#9733;&#9734;&#9734;&#9734;</p> -->
                 </div>
                 <!--</div>-->
 
@@ -319,20 +333,27 @@ $('.close-tab').click(function(){
  
 
  <script>
+  function transactionCode(len){
+     var text = "T";
+    
+     var charset = "1234567987";
+    
+      for( var i=0; i < len; i++ )
+        
+        text += charset.charAt(Math.floor(Math.random() * charset.length));
+    
+     return text;
+     
+    }
+
   function payWithPaystack(){
     var handler = PaystackPop.setup({
       key: 'pk_test_5638d7600224d02d21d840f4a48d8e1d58cb50b2',
-      email: 'sampleuser@gmail.com',
+      email: 'user@gmail.com',
       amount: 2000,
-      ref: "T12",
+      ref: Math.random(),
       metadata: {
-         custom_fields: [
-            {
-                display_name: "New Customer",
-                variable_name: "New_customer",
-                value: "+234242206604"
-            }
-         ]
+         
       },
       callback: function(response){
           alert('success. transaction ref is ' + response.reference);

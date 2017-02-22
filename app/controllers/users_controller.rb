@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+    # respond_to :html, :js 
+
  #  before_action :logged_in_user, only: [:edit, :update , :show]
  # before_action :correct_user, only: [:edit, :update, :show]
 
@@ -16,11 +17,19 @@ class UsersController < ApplicationController
    	@user = User.new(user_params)
    
    	if @user.save
-         
-         flash.now[:success] = "Proceed to reserve space"
          log_in @user
+         flash.now[:success] = "Proceed to reserve space"
+         # redirect_to root_url
+
+         # id = workspaces.id
+         # host_id = workspaces.host_id
+         # :host_id => workspaces.host_id, :id => workspaces.id
          # @workspace = Workspace.find(params[:host_id => workspaces.host_id , :id => workspaces.id])
-         redirect_to host_workspaces_path
+         #/hosts/:host_id/workspaces/:id(.:format)
+         #/hosts/12/workspaces/9
+         #host_workspaces GET    /hosts/:host_id/workspaces(.:format) 
+         # redirect_to host_workspaces_path(:host_id)
+          redirect_to @user
          # redirect_to workspaces_url({:action=>"show", :controller=>"workspaces" , :host_id => workspaces.host_id, :id => workspaces.id} )
          
          
