@@ -430,7 +430,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   width: calc(100% - 260px);
   min-height: 100%; }
 
-.main-panel > .content {
+.content {
   padding: 30px 15px;
   min-height: -webkit-calc(100% - 123px);
   min-height: calc(100% - 123px); }
