@@ -100,8 +100,8 @@
                 </div>
                 <div class="col-md-4 reserve-right">
                     <!-- <p class="price" id="hostprice" > <%= @workspace.price %></p> -->
-                    <div class="hostprice" id="hostprice">  <%= @workspace.price %>  </div>
-                    <div class="space-price" id='total'></div>
+                    <div class="hostprice" id="hostprice"> &#8358; <%= @workspace.price %>  </div>
+                    
                     <div class="duration__box" id='total-duration'></div>
                     <form >
                  <script src="https://js.paystack.co/v1/inline.js"></script>
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="col-md-4 details card">
-                     <img class="logo img-responsive" src="assets/img/tpx-logo.png" alt="">
+                    <!--  <img class="logo img-responsive" src="assets/img/tpx-logo.png" alt=""> -->
 
                     <h3>Address</h3>
                     <p>16, Alfred Olaiya Street,
@@ -350,7 +350,7 @@ $('.close-tab').click(function(){
     var handler = PaystackPop.setup({
       key: 'pk_test_5638d7600224d02d21d840f4a48d8e1d58cb50b2',
       email: 'user@gmail.com',
-      amount: 2000,
+      amount: 4000,
 
       ref: Math.random(),
 
