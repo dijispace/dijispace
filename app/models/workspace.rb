@@ -1,5 +1,6 @@
 class Workspace < ApplicationRecord
   	mount_uploader :picture, PictureUploader
+    mount_uploader :banner,  BannerUploader
     belongs_to :host
 
   #belongs_to :host

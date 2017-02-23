@@ -54,7 +54,7 @@
     <div class="row single-listing">
         <div class="col-md-4">
             <!-- <img class="img-responsive" src="assets/img/post-sample-image.jpg" alt=""> -->
-            <%= image_tag workspaces.picture.url if workspaces.picture? %>
+            <%= image_tag workspaces.picture.url if workspaces.banner? %>
         </div>
         <div class="col-md-8">
             <h3><%= workspaces.name %></h3>
