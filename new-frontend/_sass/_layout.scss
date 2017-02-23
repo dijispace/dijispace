@@ -258,6 +258,10 @@ header.intro-header {
   margin: 10px 0 0;
 }
 
+.page-heading.search-results {
+  padding: 0;
+}
+
 .pages {
   border-bottom: thin solid #f3f3f3;
 }
@@ -291,7 +295,7 @@ header.intro-header {
 }
 
 .listings {
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .listings .col-md-6 {
