@@ -41,7 +41,8 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#home'
   get '/works', to: 'static_pages#works'
 
-  
+  #Routes for dashboard
+  get '/dashboard', to: 'hosts#index' 
   
   
 
