@@ -43,7 +43,7 @@ gem 'paystack'
 
 gem 'bcrypt', '3.1.11'
 
-gem 'responders'
+ gem 'responders'
 #Use Bootstap
  #gem 'bootstrap-sass', '3.3.6'
  gem 'font-awesome-sass', '~> 4.6.2'
@@ -56,7 +56,10 @@ gem 'responders'
 # gem 'capistrano-rails', group: :development
  gem "pikaday-gem"
  gem 'momentjs-rails'
- gem "animate-rails" 
+
+  
+ gem "animate-rails"
+ 
 
   
 group :development, :test do
