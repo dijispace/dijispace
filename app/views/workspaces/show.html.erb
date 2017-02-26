@@ -1,4 +1,6 @@
-  <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+  <div class="page-content">
+  <div class="wrapper">
+   <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -45,21 +47,9 @@
     <!-- /.container -->
 </nav>
 
-
-
-
-<!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    
-     
-
-    
-    
-
-    <div class="page-content">
-      <div class="wrapper">
-
-        <header class="intro-header single-listing" style="background-image: url(<%= asset_path('pexels-photo.jpg') %>) ">
+  <div class="page-content">
+    <div class="wrapper">
+         <header class="intro-header single-listing" style="background-image: url(<%= asset_path('pexels-photo.jpg') %>) ">
 
         <div class="container">
             <div class="row">
@@ -72,8 +62,7 @@
             </div>
         </div>
     </header>
-
-         <!-- Main Content -->
+           <!-- Main Content -->
     <div class="container card-page">
         <div class="row">
             <div class="col-md-12">
@@ -83,11 +72,15 @@
                         <label class="form_label">Start Date</label>
                         <!-- <input type="text" class="form_input form_input-md" value="" id="date-picker1" readonly=""> -->
                         <input type="text" id="datepicker" class="form_input form_input-md" value="" id="date-picker1" readonly="">
+                        <div class="form-icon__section">
+                            <!-- <img class="icon-calendar icon-sm" src="assets/img/calendar.svg"> -->
+                            <%= image_tag("calendar.svg", :class => "icon-calendar icon-sm" ,  ) %>
+                        </div>
                     </div>
-                    <div class="seats reserve">
+                     <div class="seats reserve">
                         <label class="form_label">Duration</label>
                         <div class="stepperInput">
-                            <input type="number"  value="1" class="stepperInput_input fixed-height" id="duration">
+                            <input type="text" placeholder="Age" value="1" class="stepperInput_input fixed-height" id="duration">
                         </div>
                     </div>
                     <div class="pricing-type reserve">
@@ -97,6 +90,10 @@
                             <option>Weekly</option>                            
                             <option>Monthly</option>                            
                         </select>
+                        <div class="form-icon__section">
+                            <!-- <img class="icon-android-arrow-dropdown" src="assets/img/caret-down.svg"> -->
+                            <%= image_tag("caret-down.svg", :class => "icon-android-arrow-dropdown" ,  ) %>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 reserve-right">
@@ -124,8 +121,8 @@
                     </article>
                 </div>
 
-                <div class="col-md-4 details card">
-                    <!--  <img class="logo img-responsive" src="assets/img/tpx-logo.png" alt=""> -->
+                 <div class="col-md-4 details card">
+                    <!-- <img class="logo img-responsive" src="assets/img/tpx-logo.png" alt=""> -->
 
                     <h3>Address</h3>
                     <p>16, Alfred Olaiya Street,
@@ -136,12 +133,10 @@
                     <ul>
                         <li>WiFi<i class="fa fa-wifi" aria-hidden="true"></i></li>
                         <li>Food<i class="fa fa-cutlery" aria-hidden="true"></i></li>
-                        <li>Alcohol<i class="fa fa-beer" aria-hidden="true"></i></li>
+                        <!-- <li>Alcohol<i class="fa fa-beer" aria-hidden="true"></i></li> -->
                         <li>Meeting Room<i class="fa fa-handshake-o" aria-hidden="true"></i></li>
                     </ul>
 
-                    <!-- <h5>Review</h5>
-                    <p>&#9733;&#9733;&#9734;&#9734;&#9734;</p> -->
                 </div>
                 <!--</div>-->
 
@@ -153,8 +148,31 @@
 
 
     <hr>
-      </div>
+
+
     </div>
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+ 
+
+
+
+
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    
+     
+
+    
+    
+
+    
     
 
     <!-- Footer -->
