@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   get '/works', to: 'static_pages#works'
 
   #Routes for dashboard
-  get '/dashboard', to: 'hosts#index' 
+  # get '/dashboard', to: 'hosts#index' 
   
   
 

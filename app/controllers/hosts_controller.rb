@@ -17,9 +17,10 @@ class HostsController < ApplicationController
   def create
   	@host = Host.new(host_params)
   	if @host.save
-      # log_in @host
-  		# redirect_to @host
-      render 'index'
+       log_in @host
+  		 redirect_to @host
+       # render 'host/index'
+      
   	else
   		render 'new'
    end
