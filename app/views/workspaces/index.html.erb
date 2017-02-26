@@ -1,4 +1,7 @@
- <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+ <div class="page-content">
+       <div class="wrapper">
+       <!-- navbar-custom -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -45,10 +48,8 @@
     <!-- /.container -->
 </nav>
 
-<div class="page-content">
-      <div class="wrapper">
-        
-     <% @workspace.each do |workspaces| %> 
+
+  <% @workspace.each do |workspaces| %> 
 <div class="container listings">
 
     <div class="row single-listing">
@@ -59,7 +60,7 @@
         <div class="col-md-8">
             <h3><%= workspaces.name %></h3>
             <p><%= workspaces.location %></p>
-            <p><%= workspaces.price %></p>
+            <p>&#8358;<%= workspaces.price %></p>
             <!-- <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet felis eu lorem lacinia ullamcorper vitae in nisl. Sed at nulla at nisi tincidunt scelerisque nec vitae metus. Quisque ligula est, convallis fermentum blandit a, elementum ac augue. Sed ut interdum dui, vitae scelerisque metus....</article> -->
             <%= link_to 'View More',  {:controller=>"workspaces", :action=>"show", :host_id => workspaces.host_id, :id => workspaces.id} , class: "btn btn-info" %> 
         </div>
@@ -71,10 +72,45 @@
  <% end %>
 
 
+</div>
+ </div>
 
-      </div>
-    </div>
 
+ <footer>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <ul>
+                  <li>About Us</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Terms of Use</li>
+                  <li>Privacy Policy</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Facebook</li>
+                  <li>Twitter</li>
+                </ul>
+              </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">&copy; 2017. Dijispace Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+        
+   
+
+
+   
+   
 
 
 
