@@ -1,0 +1,65 @@
+/*
+ *
+ */
+ .container-fluid {
+     padding-right: 50px;
+     padding-left: 50px;
+ }
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+p {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+p a {
+  text-decoration: underline;
+}
+h1 {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 800;
+}
+a {
+  color: #333333;
+}
+a:hover,
+a:focus {
+  color: #3385A1;
+}
+a img:hover,
+a img:focus {
+  cursor: zoom-in;
+}
+blockquote {
+  color: #777777;
+  font-style: italic;
+}
+
+section {
+  padding: 50px 0;
+}
+
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: #0085A1;
+}
+::selection {
+  color: white;
+  text-shadow: none;
+  background: #0085A1;
+}
+img::selection {
+  color: white;
+  background: transparent;
+}
+img::-moz-selection {
+  color: white;
+  background: transparent;
+}
+body {
+  -webkit-tap-highlight-color: #0085A1;
+}
