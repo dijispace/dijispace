@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+ 
+
+
+
+<% @space.each do |spaces| %>
+
+<div class="container" >
+   
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-info">
+                  <%= image_tag spaces.picture.url if spaces.picture%>   
+                </div>
+                <div class="panel-more1">
+                   
+                  <p><%= spaces.name  %> </p> 
+                  <p><%= spaces.location %></p>
+                  
+                  <p> $<%= spaces.price %> </p>
+                  </div>
+                  
+            </div>
+            </div>
+            </div>
+
+            <% end %>
+           

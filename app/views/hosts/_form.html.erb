@@ -1,0 +1,17 @@
+   <%= form_for(@host) do |f| %>
+         
+    <%= f.label :name %>
+    <%= f.text_field :name , class: 'form-control' %>
+  
+    <%= f.label :email %>
+    <%= f.email_field :email , class: 'form-control'   %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password , class: 'form-control' %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation , class: 'form-control' %>
+    <br>
+    <%= f.submit :Submit , class: 'btn btn-primary btn-block'%>
+    <p>Existing Host? <%= link_to "Log In" , loginhost_path%> </p>
+<% end %> 

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  host: one
+  name: MyText
+  location: MyText
+  country: MyText
+  description: MyText
+  price: 1
+  seats: 1
+
+two:
+  host: two
+  name: MyText
+  location: MyText
+  country: MyText
+  description: MyText
+  price: 1
+  seats: 1

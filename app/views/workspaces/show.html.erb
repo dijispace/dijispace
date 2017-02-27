@@ -1,0 +1,397 @@
+
+  <div class="page-content">
+  <div class="wrapper">
+   <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+
+            <%= link_to image_tag("logo.png" , class: "img-responsive"), root_path, class: "navbar-brand" %>
+
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- <a href="#">Register Your Space</a> -->
+                    <%= link_to "Register Your Space" , signuphost_path%>
+
+                </li>
+
+                
+
+                <% if logged_in? %>
+                <li><%= link_to "Users", '#' %></li>
+                    <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                <ul class="dropdown-menu"> 
+                  <li><%= link_to "Profile", current_user%></li>
+                  <li><%= link_to "Settings", "#"%></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Log Out", logout_path, method: "delete" %>
+                  </li>
+                </ul>
+            </li>
+              <% else %>    
+
+            
+                    <li>
+                          <%= link_to "Login" , login_path %>
+                    </li>
+                
+                <li>
+                         <%= link_to "Sign Up" , signup_path %>
+
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+  <div class="page-content">
+    <div class="wrapper">
+         <header class="intro-header single-listing" style="background-image: url(<%= asset_path('pexels-photo.jpg') %>) ">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1><%= @workspace.name %></h1>
+                        <span class="subheading"><%= @workspace.location %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+           <!-- Main Content -->
+    <div class="container card-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12 card">
+                <div class="col-md-8 reserve-left">
+                    <div class="start-date reserve">
+                        <label class="form_label">Start Date</label>
+                        <!-- <input type="text" class="form_input form_input-md" value="" id="date-picker1" readonly=""> -->
+                        <input type="text" id="datepicker" class="form_input form_input-md" value="" id="date-picker1" readonly="">
+                        <div class="form-icon__section">
+                            <!-- <img class="icon-calendar icon-sm" src="assets/img/calendar.svg"> -->
+                            <%= image_tag("calendar.svg", :class => "icon-calendar icon-sm" ,  ) %>
+                        </div>
+                    </div>
+                     <div class="seats reserve">
+                        <label class="form_label">Duration</label>
+                        <div class="stepperInput">
+                            <input type="text" placeholder="Age" value="1" class="stepperInput_input fixed-height" id="duration">
+                        </div>
+                    </div>
+                    <div class="pricing-type reserve">
+                        <label class="form_label">Duration Type</label>
+                        <select class="select_input select_input-full select_input-md" id="duration-type">
+                            <option>Daily</option>                            
+                            <option>Weekly</option>                            
+                            <option>Monthly</option>                            
+                        </select>
+                        <div class="form-icon__section">
+                            <!-- <img class="icon-android-arrow-dropdown" src="assets/img/caret-down.svg"> -->
+                            <%= image_tag("caret-down.svg", :class => "icon-android-arrow-dropdown" ,  ) %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reserve-right">
+                    <!-- <p class="price" id="hostprice" > <%= @workspace.price %></p> -->
+                    <div class="hostprice" id="hostprice"> &#8358; <%= @workspace.price %>  </div>
+                    
+                    <div class="duration__box" id='total-duration'></div>
+                    <form >
+                 <script src="https://js.paystack.co/v1/inline.js"></script>
+                 <!-- onclick="payWithPaystack()" -->
+              <button  class="btn btn-info book" onclick="payWithPaystack()" type="button" > Book Space </button> 
+              <!-- signup_path -->
+      
+              
+                 </form>    
+                    <!-- <button class="btn btn-info book" type="button">Book Space</button>
+ -->                </div>
+                </div>
+                <!--<div class="col-md-12 details">-->
+                <div class="col-md-8 details card">
+                    <article>
+                        <p><%= @workspace.description %></p>
+
+                       
+                    </article>
+                </div>
+
+                 <div class="col-md-4 details card">
+                    <!-- <img class="logo img-responsive" src="assets/img/tpx-logo.png" alt=""> -->
+
+                    <h3>Address</h3>
+                    <p>16, Alfred Olaiya Street,
+                    Off Oroleye Crescent, Opebi,
+                    Ikeja, Lagos.</p>
+
+                    <h3>Features</h3>
+                    <ul>
+                        <li>WiFi<i class="fa fa-wifi" aria-hidden="true"></i></li>
+                        <li>Food<i class="fa fa-cutlery" aria-hidden="true"></i></li>
+                        <!-- <li>Alcohol<i class="fa fa-beer" aria-hidden="true"></i></li> -->
+                        <li>Meeting Room<i class="fa fa-handshake-o" aria-hidden="true"></i></li>
+                    </ul>
+
+                </div>
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+
+     
+
+
+    <hr>
+
+
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+ 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <ul>
+                  <li>About Us</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Terms of Use</li>
+                  <li>Privacy Policy</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Facebook</li>
+                  <li>Twitter</li>
+                </ul>
+              </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">&copy; 2017. Dijispace Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+  <script type="text/javascript">
+          var dt = new Date()
+          var day = dt.getDate();
+          var month = dt.getMonth() + 1;
+          var year = dt.getFullYear();
+          var todaysDate = year + '-' + month + '-' + day;
+          var hourly = '0';
+          var daily = '1';
+          var weekly = '7';
+          var monthly = '30';
+          var yearly = '0';
+          var currency = '&#8358;'; 
+          //var currency = '&#8373;';
+         
+          
+          var picker = new Pikaday(
+            { 
+                field: document.getElementById('datepicker'),
+                format: 'YYYY-MM-D' ,
+                firstDay: 1,
+                minDate: new Date(todaysDate),
+                maxDate: new Date('2030-12-31'),
+                yearRange: [2017,2040],
+                onSelect: function() {
+            console.log(this.getMoment().format('Do MMMM YYYY'));
+           }
+
+            });
+
+          var picker = new Pikaday(
+            {
+                field: document.getElementById('start-date'),
+                firstDay: 1,
+                minDate: new Date(todaysDate),
+                maxDate: new Date('2030-12-31'),
+                yearRange: [2017,2040]
+            });
+
+          function number_format(number,decimals,dec_point,thousands_sep)
+          {
+            number = (number + '').replace(/[^0-9+\-Ee.]/g,'');
+            var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+          }
+
+    //Calculate Total Price
+    function calculate_total_price(){
+    var duration = $('#duration').val();
+    var durationType = $('#duration-type').val();
+    var screenWidth = $(window).width();
+    //var hostprice = $('#hostprice').val();
+    //var xx = parseInt(document.getElementById("hostprice").value);
+    //var xx = document.getElementById("hostprice").innerHTML;
+     //var hostprice = $('#hostprice').text();
+     //var price = parseInt(text,10);
+     var x = document.getElementById('hostprice');
+     var nr =x.innerText;
+     
+    //var x = document.getElementById("myNumber").value;
+   // var x = document.getElementById("total").value;               
+    //$('#hostprice').val()
+
+    if(screenWidth > 1100){
+        switch(durationType){
+            //case 'Hourly':
+              //  $('#total-duration').html('Total for ' + duration + ' hour(s)');
+                //return duration * hourly;
+            case 'Daily':
+                $('#total-duration').html('Total for ' + duration + ' day(s)');
+                return    duration * daily;
+            case 'Weekly':
+                $('#total-duration').html('Total for ' + duration + ' week(s)');
+                return   duration * weekly ;
+            case 'Monthly':
+                $('#total-duration').html('Total for ' + duration + ' month(s)');
+                return   duration * monthly ;
+            case 'Yearly':
+                $('#total-duration').html('Total for ' + duration + ' year(s)');
+                return duration ;
+        }
+    }
+    else{
+        //mobile
+        var mobileDurationType = $('#duration-select').val();
+        var durationMobile = $('#duration-mobile').val();
+        switch(mobileDurationType){
+            case 'Hourly':
+                return durationMobile * hostprice;
+            case 'Daily':
+                return durationMobile * hostprice;
+            case 'Weekly':
+                return durationMobile * hostprice;
+            case 'Monthly':
+                return durationMobile * hostprice;
+            case 'Yearly':
+                return durationMobile * hostprice;
+        }
+    }
+}
+
+calculate_total_price();
+
+setInterval(function(){
+    //var totalPrice =  number_format(calculate_total_price());
+    var x = document.getElementById('hostprice');
+     var nr =x.innerText;
+    var totalPrice = currency + nr * number_format(calculate_total_price());
+    //var totalPrice = number_format(calculate_total_price());
+    //$('#hostprice').html(totalPrice);
+    $('#total').html(totalPrice);
+    //$('#total-calc-mobile').html(totalPrice);
+            },300);
+
+$('.close-tab').click(function(){
+    $('.tabs, #overlay').hide();
+});
+
+
+
+
+  </script>
+
+
+
+
+
+ 
+
+ <script>
+  function transactionCode(len){
+     var text = "T";
+    
+     var charset = "1234567987";
+    
+      for( var i=0; i < len; i++ )
+        
+        text += charset.charAt(Math.floor(Math.random() * charset.length));
+    
+     return text;
+     
+    }
+
+  function payWithPaystack(){
+    var handler = PaystackPop.setup({
+      key: 'pk_test_5638d7600224d02d21d840f4a48d8e1d58cb50b2',
+      email: 'user@gmail.com',
+      amount: 4000,
+
+      ref: Math.random(),
+
+      metadata: {
+         
+      },
+      callback: function(response){
+          alert('success. transaction ref is ' + response.reference);
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+

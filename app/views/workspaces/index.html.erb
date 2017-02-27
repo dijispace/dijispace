@@ -1,0 +1,124 @@
+ <div class="page-content">
+       <div class="wrapper">
+       <!-- navbar-custom -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+          
+            <%= link_to image_tag("logo.png" , class: "img-responsive"), root_path, class: "navbar-brand" %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- <a href="#">Register Your Space</a> -->
+                    <%= link_to "Register Your Space" , signuphost_path%>
+                </li>                
+                <% if logged_in? %>
+                <li><%= link_to "Users", '#' %></li>
+                    <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                <ul class="dropdown-menu"> 
+                  <li><%= link_to "Profile", current_user%></li>
+                  <li><%= link_to "Settings", "#"%></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Log Out", logout_path, method: "delete" %>
+                  </li>
+                </ul>
+            </li>
+              <% else %>    
+                    <li> 
+                        <%= link_to "Login" , login_path %>
+                    </li>               
+                <li>
+                         <%= link_to "Sign Up" , signup_path %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+  <% @workspace.each do |workspaces| %> 
+<div class="container listings">
+
+    <div class="row single-listing">
+        <div class="col-md-4">
+            <!-- <img class="img-responsive" src="assets/img/post-sample-image.jpg" alt=""> -->
+            <%= image_tag workspaces.picture.url if workspaces.picture? %>
+        </div>
+        <div class="col-md-8">
+            <h3><%= workspaces.name %></h3>
+            <p><%= workspaces.location %></p>
+            <p>&#8358;<%= workspaces.price %></p>
+            <!-- <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet felis eu lorem lacinia ullamcorper vitae in nisl. Sed at nulla at nisi tincidunt scelerisque nec vitae metus. Quisque ligula est, convallis fermentum blandit a, elementum ac augue. Sed ut interdum dui, vitae scelerisque metus....</article> -->
+            <%= link_to 'View More',  {:controller=>"workspaces", :action=>"show", :host_id => workspaces.host_id, :id => workspaces.id} , class: "btn btn-info" %> 
+        </div>
+    </div>
+    
+   
+
+</div>
+ <% end %>
+
+
+</div>
+ </div>
+
+
+ <footer>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <ul>
+                  <li>About Us</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Terms of Use</li>
+                  <li>Privacy Policy</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Facebook</li>
+                  <li>Twitter</li>
+                </ul>
+              </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">&copy; 2017. Dijispace Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+        
+   
+
+
+      </div>
+    </div>
+     
+
+
+   
+   
+
+
+
+    
+
+
