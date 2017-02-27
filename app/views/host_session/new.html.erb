@@ -1,0 +1,98 @@
+ <nav class="navbar navbar-default navbar-custom navbar-fixed-top home">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <%= link_to image_tag("logo.png" , class: "img-responsive"), root_path, class: "navbar-brand" %>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- <a href="#">Register Your Space</a> -->
+                    <%= link_to "Register Your Space" , signuphost_path%>
+                </li>
+
+                
+                <% if logged_in? %>
+                <li><%= link_to "Users", '#' %></li>
+                    <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                <ul class="dropdown-menu"> 
+                  <li><%= link_to "Profile", current_user%></li>
+                  <li><%= link_to "Settings", "#"%></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Log Out", logout_path, method: "delete" %>
+                  </li>
+                </ul>
+            </li>
+              <% else %>    
+            
+                    <li>
+                          <%= link_to "Login" , login_path %>
+                    </li>
+                
+                <li>
+                         <%= link_to "Sign Up" , signup_path %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+<br>
+<br>
+<!-- <section>
+   <center> 
+      <h1>Log in</h1>
+   </center>  	
+	<div class="container">
+		<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			
+		</div> 
+		</div>
+	</div>
+</section> -->
+
+
+
+<section>
+	<center><h1> </h1></center>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				 <div class="panel panel-default  ">
+					<div class="panel-heading">
+						<strong> Log In </strong>
+					</div>
+					<div class="panel-body">
+						<%= form_for(:session, url: loginhost_path) do |f| %>
+
+			           <%= f.label :email %>
+			           <%= f.email_field :email, class: 'form-control' %>
+
+			           <%= f.label :password %>
+			           <%= f.password_field :password, class: 'form-control' %>
+                       <br>
+			           <%= f.submit "Log in", class: "btn btn-primary btn-block" %>
+			           <% end %>
+			          
+					</div>
+				
+                </div>
+
+			</div>
+		</div>
+	</div>
+</section>

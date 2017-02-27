@@ -1,0 +1,25 @@
+<%= form_for( @workspace, html: { multipart: true}) do |f| %>
+    
+    <%= f.label :upload %>
+    <%= f.file_field :picture , class: 'form-control' %> 
+      
+    <%= f.label :name %>
+    <%= f.text_field :name , class: 'form-control' %>
+    
+     <%= f.label :country %>
+     <%= f.text_field :country , class: 'form-control'   %>
+
+    <%= f.label :location %>
+    <%= f.text_field :location , class: 'form-control'   %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description , class: 'form-control'   %>
+
+    <%= f.label :price %>
+    <%= f.text_field :price , class: 'form-control'   %>
+
+    <%= f.label :seats %>
+    <%= f.text_field :seats , class: 'form-control'   %>
+    <br>
+    <%= f.submit :Submit , class: 'btn btn-primary btn-block'%>
+<% end %> 

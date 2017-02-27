@@ -1,0 +1,17 @@
+   <%= form_for @user do |f| %>
+         
+    <%= f.label :name %>
+    <%= f.text_field :name , class: 'form-control input-lg' %>
+  
+    <%= f.label :email %>
+    <%= f.email_field :email , class: 'form-control input-lg'   %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password , class: 'form-control input-lg' %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation , class: 'form-control input-lg' %>
+    <br>
+    <%= f.submit :Submit , class: 'btn btn-lg btn-primary btn-block'%>
+<% end %> 
+  <p>New Host? <%= link_to "Sign up now" , signuphost_path%> </p>  

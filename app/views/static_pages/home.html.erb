@@ -1,0 +1,330 @@
+
+   <div class="page-content">
+         <div class="wrapper">
+           <nav class="navbar navbar-default navbar-custom navbar-fixed-top home">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+
+            <%= link_to image_tag("logo.png" , class: "img-responsive"), root_path, class: "navbar-brand" %>
+
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- <a href="#">Register Your Space</a> -->
+                    <%= link_to "Register Your Space" , signuphost_path%>
+
+                </li>
+
+                
+
+                <% if logged_in? %>
+                <li><%= link_to "Users", '#' %></li>
+                    <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                <ul class="dropdown-menu"> 
+                  <li><%= link_to "Profile", current_user%></li>
+                  <li><%= link_to "Settings", "#"%></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Log Out", logout_path, method: "delete" %>
+                  </li>
+                </ul>
+            </li>
+              <% else %>    
+
+            
+                    <li>
+                          <%= link_to "Login" , login_path %>
+                    </li>
+                
+                <li>
+                         <%= link_to "Sign Up" , signup_path %>
+
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    
+    <div class="page-content">
+      <div class="wrapper">
+       <header class="intro-header"  >
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site-heading">
+                        <span class="subheading">Find a place to work from on</span>
+                        <h1>Dijispace</h1>
+                        <div id="top-search-input">
+                            <div class="input-group col-md-12">
+                            <!-- search_path -->   
+                  <%= form_tag search_path, :method => 'get' , :class => 'input-group' do %>
+                    <%= text_field_tag :search, params[:search] , placeholder: "search by  country or city ", class: 'form-control input-lg' %>
+                         
+
+                                 <% end %>
+                                 <span class="input-group-btn">                       
+                                    <%= button_tag "Find Space", :class => "btn btn-info btn-lg", :type => "submit" %>
+                                </span>
+
+                            </div>
+                             
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="featured-listings">
+    <h2 class="section-title">Featured Listings</h2>
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+           <div id="Carousel" class="carousel slide">
+
+                 
+                    <ol class="carousel-indicators">
+                        <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#Carousel" data-slide-to="1"></li>
+                        <li data-target="#Carousel" data-slide-to="2"></li>
+                    </ol>
+                 
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                    
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("imagestwo.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Office Room</h3>
+                                <p>Labadi</p>
+                            </div>
+                            <div class="col-md-3">
+                            <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                             <%= image_tag("meeting-modern-room-conference-159805.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                            </a>
+                            <h3>Conference Room</h3>
+                                <p>Accra</p>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("imagestwo.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Ispace</h3>
+                                <p>Accra</p>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("imagestwo.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Workshed</h3>
+                                <p>Accra</p>
+                            </div>
+                        </div><!--.row-->
+                    </div><!--.item-->
+                 
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("imagestwo.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Workshed</h3>
+                                <p>Baatsona, Spintex</p>
+                                </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("download.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Ispace</h3>
+                                <p>Labone, Accra</p>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("imag.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Penplusbyte</h3>
+                                <p>Osu,Accra</p>
+                                </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("meeting-modern-room-conference-159805.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Meltwater Incubator</h3>
+                                <p>Accra</p>
+                            </div>
+                        </div><!--.row-->
+                    </div><!--.item-->
+                 
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("download.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Impact Hub</h3>
+                                <p>Osu,Accra</p>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("meeting-modern-room-conference-159805.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Junction mall</h3>
+                                <p>Numgua</p>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("meeting-modern-room-conference-159805.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Ispace</h3>
+                                <p>Accra</p>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="thumbnail"><!-- <img src="assets/img/post-sample-image.jpg" alt="Image" style="max-width:100%;"> -->
+                                    <%= image_tag("pexels-photo.jpg", :alt => "workspace" , :style => "max:width:100%") %>
+                                </a>
+                                <h3>Workshed</h3>
+                                <p>Baatsona,Spintex</p>
+                            </div>
+                        </div><!--.row-->
+                    </div><!--.item-->
+                 
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+            </div><!--.Carousel-->
+        </div>
+
+        </div>
+
+     </div>    
+    </section>
+
+     <section id="why">
+
+        <h2 class="section-title">Benefits</h2>
+        <div class="container">
+            <div class="col-md-4">
+                <!-- <img src="assets/img/wallet.svg" alt="Affordable" > -->
+                <%= image_tag("wallet.svg", :alt => "Affordable" ) %>
+                <h4>Affordable</h4>
+            </div>
+            <div class="col-md-4">
+<!--                 <img src="assets/img/shuffle.svg" alt="flexible" >
+ -->                <%= image_tag("shuffle.svg", :alt => "flexible" ) %>
+                <h4>Flexible</h4>
+            </div>
+            <div class="col-md-4">
+<!--                 <img src="assets/img/smartphone.svg" alt="Easy" >
+ -->                <%= image_tag("smartphone.svg", :alt => "flexible" ) %>
+                <h4>Easy Booking</h4>
+            </div>
+            <div class="col-md-4">
+                <!-- <img src="assets/img/stopwatch.svg" alt="Quick" > -->
+                <%= image_tag("stopwatch.svg", :alt => "Quick" ) %>
+                <h4>Quick</h4>
+            </div>
+            <div class="col-md-4">
+                <!-- <img src="assets/img/network.svg" alt="Networking" > -->
+                <%= image_tag("network.svg", :alt => "Networking" ) %>
+                <h4>Networking Opportunities</h4>
+            </div>
+            <div class="col-md-4">
+                <!-- <img src="assets/img/route.svg" alt="flexible" > -->
+                <%= image_tag("route.svg", :alt => "flexible" ) %>
+                <h4>Convenience</h4>
+            </div>
+        </div>
+    </section>
+
+
+    
+  <section id="register">
+
+        <div class="container-fluid">
+            <div class="col-md-6">
+                <h3>Find work spaces efficiently</h3>
+                <p>No need to stress going to the city's most popular hub to get work done. We can help you set up in a space near you</p>
+                <button class="btn btn-sign">Sign Up</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Earn money as a host</h3>
+                <p>Instead of having space in your building wasting away, you can turn into a space for work and collaboration today and earn.</p>
+                <button class="btn btn-sign">Sign Up</button>
+
+            </div>
+        </div>
+    </section>
+   
+ <hr>
+
+</div>
+    
+
+
+      </div>
+    </div>
+         </div>
+   </div>
+
+<footer>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <ul>
+                  <li>About Us</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Terms of Use</li>
+                  <li>Privacy Policy</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Facebook</li>
+                  <li>Twitter</li>
+                </ul>
+              </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">&copy; 2017. Dijispace Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+   
+
+
+
+
+
+
+   
+
+
